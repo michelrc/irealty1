@@ -1,0 +1,56 @@
+# File types #
+##############
+*.pyc
+*.swo
+*.swp
+*.swn
+assets/*
+css/*
+framework/*
+images/*/*.png
+images/*/*
+!iamges/*.txt
+!images/*/*.txt
+
+protected/runtime/*
+protected/extensions/*
+protected/test/*
+protected/modules/auth/*
+protected/modules/entity/*
+protected/modules/irseo/*
+protected/modules/irtext/*
+protected/modules/PcViewsCounter/*
+protected/modules/user/*
+!protected/modules/user/models/UserLogin.php
+protected/modules/ycm/*
+static/imgs/*
+#static/fonts/*
+static/*.html
+css/*
+framework/*
+uploads/*
+!uploads/*.txt
+themes/classic/*
+themes/site/*
+themes/unicorn/css/*
+!themes/unicorn/css/unicorn.login.css
+themes/unicorn/fonts/*
+themes/unicorn/img/*
+themes/unicorn/js/*
+themes/unicorn/less/*
+
+# Specific files #
+##################
+protected/runtime/*.log
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+*~
+
+#IDE files
+###################
+.idea/*

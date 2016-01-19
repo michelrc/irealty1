@@ -1,0 +1,8 @@
+/* Put css code in here */
+.tab-pane.lang {
+    border: 1px solid #DDD;
+}
+
+.languageWidget hr {
+    margin: 0;
+}

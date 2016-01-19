@@ -1,0 +1,183 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+@font-face {
+  font-family: 'MyriadPro-Bold';
+  src: url("../fonts/MyriadPro-Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/MyriadPro-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadPro-Bold.woff") format("woff"), url("../fonts/MyriadPro-Bold.ttf") format("truetype"), url("../fonts/MyriadPro-Bold.svg#MyriadPro-Bold") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility; }
+
+@font-face {
+  font-family: 'Myriad-Pro-Regular';
+  src: url("../fonts/MyriadPro-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadPro-Regular.woff") format("woff"), url("../fonts/MyriadPro-Regular.ttf") format("truetype"), url("../fonts/MyriadPro-Regular.svg#MyriadPro-Regular") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+
+body {
+  background-color: #231F20; }
+
+img {
+  max-width: 80%;
+  height: auto; }
+
+header {
+  position: relative;
+  width: 100%;
+  padding-top: 5%; }
+  header h1 {
+    text-align: center; }
+
+main {
+  padding-bottom: 10%; }
+  @media screen and (max-width: 640px) {
+    main {
+      text-align: center; } }
+  main h1, main h2, main h3, main h4 {
+    text-align: center; }
+  main h3 {
+    margin-top: 5%;
+    font-family: MyriadPro-Bold, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 6vw;
+    text-transform: uppercase;
+    letter-spacing: 30px;
+    color: #A7A9AC; }
+    @media screen and (max-width: 490px) {
+      main h3 {
+        letter-spacing: 10px; } }
+  main h1 {
+    font-size: 25vw;
+    font-family: MyriadPro-Bold, Verdana, Arial, Helvetica, sans-serif;
+    color: #FCB901;
+    text-transform: uppercase; }
+  main h2 {
+    margin: 20px 0;
+    font-family: MyriadPro-Bold, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 2.5vw;
+    text-transform: uppercase;
+    color: #ffffff; }
+    @media screen and (max-width: 490px) {
+      main h2 {
+        margin: 10px 0 5px 0;
+        font-size: 3.5vw; } }
+  main .divider {
+    display: inline-block;
+    width: 100%;
+    text-align: center; }
+    main .divider img {
+      display: inline; }
+  main .info {
+    margin-top: 2%;
+    text-align: center; }
+    @media screen and (max-width: 640px) {
+      main .info {
+        display: inline-block;
+        text-align: left;
+        padding-left: 2%; } }
+    main .info a {
+      font-family: Myriad-Pro-Regular, Verdana, Arial, Helvetica, sans-serif;
+      font-size: 2vw;
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 5%; }
+      @media screen and (max-width: 640px) {
+        main .info a {
+          display: block;
+          margin: 15% 0 0 0;
+          font-size: 3vw; } }
+      @media screen and (max-width: 490px) {
+        main .info a {
+          font-size: 5vw; } }
+      main .info a:hover {
+        text-decoration: underline; }
+      main .info a i {
+        font-size: 2.5vw;
+        color: #FCB901;
+        margin-right: 10px; }
+        @media screen and (max-width: 640px) {
+          main .info a i {
+            font-size: 3.5vw; } }
+        @media screen and (max-width: 490px) {
+          main .info a i {
+            font-size: 5.5vw; } }
+  main .go-back {
+    margin-top: 10%;
+    text-align: center; }
+    main .go-back a {
+      padding: 2% 4%;
+      color: #FCB901;
+      text-decoration: none;
+      font-family: Myriad-Pro-Regular, Verdana, Arial, Helvetica, sans-serif;
+      font-size: 2.5vw;
+      text-transform: uppercase;
+      border: 1px solid #FCB901;
+      -webkit-transition: all linear .2s;
+      -moz-transition: all linear .2s;
+      -ms-transition: all linear .2s;
+      -o-transition: all linear .2s;
+      transition: all linear .2s; }
+      @media screen and (max-width: 490px) {
+        main .go-back a {
+          font-size: 4.5vw; } }
+      main .go-back a:hover {
+        color: #231F20;
+        background-color: #FCB901;
+        -webkit-transition: all linear .2s;
+        -moz-transition: all linear .2s;
+        -ms-transition: all linear .2s;
+        -o-transition: all linear .2s;
+        transition: all linear .2s; }
+      main .go-back a strong {
+        font-family: MyriadPro-Bold, Verdana, Arial, Helvetica, sans-serif;
+        font-weight: bolder; }

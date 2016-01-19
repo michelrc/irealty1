@@ -1,0 +1,2 @@
+[07-Oct-2015 17:09:31 UTC] PHP Fatal error:  Call to a member function delete() on a non-object in /home/wdoors/public_html/irealty1/protected/modules/theme/models/Article.php on line 58
+[07-Oct-2015 17:09:58 UTC] PHP Fatal error:  Call to a member function delete() on a non-object in /home/wdoors/public_html/irealty1/protected/modules/theme/models/Article.php on line 58

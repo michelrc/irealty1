@@ -1,0 +1,1677 @@
+/*===[ VAR ]===*/
+/*== social colors ==*/
+/*== /social colors ==*/
+/*===[ /VAR ]===*/
+/*====[ FONTS ]====*/
+@font-face {
+  font-family: 'MyriadProCond';
+  src: url("../fonts/MyriadPro-Cond.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/MyriadPro-Cond.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadPro-Cond.woff") format("woff"), url("../fonts/MyriadPro-Cond.otf") format("opentype"), url("../fonts/MyriadPro-Cond.svg#MyriadPro-Cond") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+@font-face {
+  font-family: 'MyriadProReg';
+  src: url("../fonts/MyriadPro-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadPro-Regular.woff") format("woff"), url("../fonts/MyriadPro-Regular.otf") format("opentype"), url("../fonts/MyriadPro-Regular.svg#MyriadPro-Regular") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+@font-face {
+  font-family: 'MyriadProBoldCond';
+  src: url("../fonts/MyriadPro-BoldCond.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/MyriadPro-BoldCond.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadPro-BoldCond.woff") format("woff"), url("../fonts/MyriadPro-BoldCond.otf") format("opentype"), url("../fonts/MyriadPro-BoldCond.svg#MyriadPro-BoldCond") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility; }
+/*====[ /FONTS ]====*/
+/*====[ GLOBALS ]====*/
+@media screen and (max-width: 767px) {
+  body {
+    padding-top: 97px; } }
+body p {
+  color: #656565;
+  font: 16px "MyriadProReg"; }
+
+.image-responsive {
+  width: 100%;
+  height: auto; }
+
+.hover-transition {
+  -webkit-transition: all linear 0.20s;
+  -moz-transition: all linear 0.20s;
+  -ms-transition: all linear 0.20s;
+  -o-transition: all linear 0.20s;
+  transition: all linear 0.20s; }
+
+.section-title {
+  float: left;
+  width: 100%;
+  margin: 40px 0; }
+  @media screen and (max-width: 640px) {
+    .section-title {
+      margin: 20px 0;
+      text-align: center; } }
+  .section-title.page-title {
+    margin: 10px 0; }
+  .section-title.filter-section {
+    margin: 30px 0 10px; }
+  .section-title .list-inline {
+    margin: 0; }
+    .section-title .list-inline > li {
+      width: 18%; }
+  .section-title .form-control {
+    display: inline-block;
+    padding-right: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
+  .section-title span {
+    color: #ffffff;
+    font: 22px "MyriadProBoldCond"; }
+  .section-title h2 {
+    margin: 0;
+    font: 36px "MyriadProCond";
+    color: #25292B; }
+    @media screen and (max-width: 560px) {
+      .section-title h2 {
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 15px; } }
+    .section-title h2.white {
+      color: #ffffff; }
+      @media screen and (max-width: 560px) {
+        .section-title h2.white {
+          float: none !important; } }
+  .section-title strong {
+    font-family: "MyriadProBoldCond"; }
+  .section-title p {
+    margin-top: 15px;
+    padding: 0 15%;
+    font: 14px/1.8 "MyriadProReg";
+    color: #656565; }
+    @media screen and (max-width: 767px) {
+      .section-title p {
+        padding: 0;
+        text-align: justify; } }
+
+.detail-info {
+  position: absolute;
+  top: -4px;
+  right: 20px;
+  max-width: 60%;
+  background-color: rgba(0, 0, 0, 0.6); }
+  @media screen and (max-width: 1199px) {
+    .detail-info {
+      max-width: none; } }
+  .detail-info a[role="button"] {
+    padding: 2px 8px;
+    font-size: 2em;
+    line-height: 45px;
+    background-color: rgba(77, 199, 236, 0.8); }
+    @media screen and (max-width: 991px) {
+      .detail-info a[role="button"] {
+        line-height: 42px; } }
+    .detail-info a[role="button"] i {
+      vertical-align: middle; }
+    .detail-info a[role="button"]:hover {
+      background-color: #1497bf; }
+    .detail-info a[role="button"]:focus, .detail-info a[role="button"]:active {
+      outline: none;
+      background-color: #1497bf; }
+  .detail-info .price {
+    padding: 0 20px;
+    color: #ffffff;
+    font: 20px/45px "MyriadProCond"; }
+    .detail-info .price strong {
+      margin-left: 8px;
+      font: 24px/45px "MyriadProBoldCond";
+      vertical-align: bottom; }
+  .detail-info .details {
+    position: absolute;
+    top: 50px;
+    color: #ffffff;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    max-height: 215px;
+    overflow-y: auto; }
+    .detail-info .details ul {
+      margin-bottom: 0; }
+    .detail-info .details li {
+      margin: 6px 0; }
+      @media screen and (max-width: 991px) {
+        .detail-info .details li {
+          margin: 2px 0; } }
+      .detail-info .details li:last-child {
+        margin-bottom: 0; }
+    .detail-info .details i.fa, .detail-info .details .detail-title {
+      color: #4DC7EC;
+      margin-right: 5px;
+      font-size: 20px; }
+      .detail-info .details i.fa.fa-arrows, .detail-info .details .detail-title.fa-arrows {
+        width: 20px;
+        height: 20px;
+        padding-top: 3px;
+        font-size: 14px;
+        color: #25292B;
+        background-color: #4DC7EC;
+        text-align: center;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%; }
+    .detail-info .details .detail-title {
+      font: 18px "MyriadProBoldCond"; }
+    .detail-info .details .count {
+      font: 20px "MyriadProCond";
+      color: #ffffff; }
+    .detail-info .details p {
+      color: #ffffff;
+      font: 12px "MyriadProReg";
+      margin-bottom: 0; }
+
+.rounded-btn {
+  display: inline-block;
+  float: right;
+  width: 60px;
+  height: 60px;
+  padding-top: 12px;
+  padding-right: 8px;
+  text-align: right;
+  font: 15px "MyriadProCond";
+  line-height: 1;
+  color: #ffffff;
+  background-color: #4DC7EC;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; }
+  .rounded-btn:focus, .rounded-btn:active {
+    outline: none; }
+  .rounded-btn:hover {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #1497bf; }
+  .rounded-btn.big-rounded {
+    float: none;
+    width: 65px;
+    height: 65px;
+    padding-top: 0;
+    font: 20px/0.9 "MyriadProCond";
+    border: 1px solid #4DC7EC; }
+    .rounded-btn.big-rounded:hover {
+      border-color: #1497bf; }
+  .rounded-btn.filter-search {
+    margin-top: -18px;
+    padding-top: 8px;
+    padding-right: 0;
+    text-align: center;
+    line-height: 46px; }
+
+.section-anchor {
+  display: block;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 60px;
+  height: 30px;
+  padding-top: 5px;
+  text-align: center;
+  background-color: #ffffff;
+  z-index: 10;
+  color: #25292B;
+  -moz-border-radius: 30px 30px 0 0;
+  -webkit-border-radius: 30px;
+  border-radius: 30px 30px 0 0;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%); }
+  .section-anchor:focus, .section-anchor:active {
+    outline: none; }
+
+.auxiliar-shadow {
+  float: left;
+  width: 100%;
+  height: 5px;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); }
+
+/*====[ /GLOBALS ]====*/
+.header {
+  position: fixed;
+  width: 90%;
+  max-width: 1140px;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1000; }
+  @media screen and (max-width: 991px) {
+    .header {
+      width: 100%; } }
+
+.header-contact-info {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 5px 0;
+  background-color: #24292c;
+  color: #ffffff; }
+  .header-contact-info > div {
+    margin: 0 10px; }
+  .header-contact-info a {
+    color: #ffffff;
+    font: 14px/18px "MyriadProCond";
+    vertical-align: top; }
+    .header-contact-info a[href^="tel:"] {
+      font-weight: bold; }
+    .header-contact-info a.contact-email {
+      text-decoration: underline; }
+  .header-contact-info .page-language {
+    font: 14px "MyriadProCond"; }
+    @media screen and (max-width: 767px) {
+      .header-contact-info .page-language a {
+        line-height: 34px; } }
+  .header-contact-info .contact-phone {
+    font: 18px/18px "MyriadProCond"; }
+    .header-contact-info .contact-phone a {
+      font: 18px/18px "MyriadProBoldCond";
+      vertical-align: top; }
+
+.navbar-default {
+  position: relative;
+  float: left;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  margin-bottom: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+  @media screen and (max-width: 767px) {
+    .navbar-default .navbar-header {
+      margin: 0; } }
+  .navbar-default .navbar-brand {
+    display: inline-block;
+    padding: 4px 4px 4px 25px; }
+    @media screen and (max-width: 767px) {
+      .navbar-default .navbar-brand {
+        padding: 4px; } }
+  .navbar-default .container-fluid {
+    padding-right: 0; }
+  @media screen and (max-width: 767px) {
+    .navbar-default .navbar-toggle {
+      margin-right: 70px;
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+      border-radius: 0; }
+      .navbar-default .navbar-toggle .icon-bar {
+        background-color: #ffffff; } }
+  @media screen and (max-width: 767px) {
+    .navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:active .icon-bar {
+      background-color: #25292B; } }
+
+@media screen and (max-width: 991px) {
+  #main-nav {
+    padding-right: 5px;
+    padding-left: 5px; } }
+@media screen and (max-width: 767px) {
+  #main-nav {
+    position: absolute;
+    right: 65px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-left: 0;
+    padding-right: 0; } }
+@media screen and (max-width: 767px) {
+  #main-nav .navbar-nav {
+    min-width: 190px;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    max-height: 210px;
+    overflow-x: hidden; } }
+#main-nav .navbar-nav li {
+  border-right: 1px solid #ffffff; }
+  @media screen and (max-width: 767px) {
+    #main-nav .navbar-nav li {
+      border-right: none;
+      border-bottom: 1px solid #ffffff; } }
+  #main-nav .navbar-nav li:first-child {
+    border-left: 1px solid white; }
+    @media screen and (max-width: 767px) {
+      #main-nav .navbar-nav li:first-child {
+        border-left: none; } }
+  @media screen and (max-width: 767px) {
+    #main-nav .navbar-nav li:last-child {
+      border-bottom: none; } }
+#main-nav .active a {
+  color: #25292B;
+  background-color: rgba(255, 255, 255, 0.6); }
+#main-nav a {
+  font: 18px/32px "MyriadProReg";
+  color: #ffffff; }
+  @media screen and (max-width: 991px) {
+    #main-nav a {
+      font-size: 14px;
+      padding: 10px; } }
+  #main-nav a:hover, #main-nav a:focus {
+    outline: none; }
+  #main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #25292B;
+    text-decoration: none; }
+
+.navbar-social-icons {
+  margin: 0 15px 0 0; }
+  @media screen and (max-width: 991px) {
+    .navbar-social-icons {
+      margin: 0 5px 0 0; } }
+  @media screen and (max-width: 767px) {
+    .navbar-social-icons {
+      margin-left: 15px; } }
+  .navbar-social-icons li {
+    padding: 0; }
+    .navbar-social-icons li a {
+      display: inline-block;
+      line-height: 50px; }
+      @media screen and (max-width: 767px) {
+        .navbar-social-icons li a {
+          line-height: normal; } }
+  .navbar-social-icons i.fa {
+    color: #ffffff; }
+  .navbar-social-icons .fa-circle-thin {
+    font-size: 1.9em;
+    color: transparent !important;
+    border: 1px solid white;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transition: all linear 0.15s;
+    -moz-transition: all linear 0.15s;
+    -ms-transition: all linear 0.15s;
+    -o-transition: all linear 0.15s;
+    transition: all linear 0.15s; }
+  .navbar-social-icons .facebook:hover .fa-circle-thin {
+    border: 1px solid #3b5998;
+    background-color: #3b5998;
+    color: #3b5998; }
+  .navbar-social-icons .google-plus:hover .fa-circle-thin {
+    border: 1px solid #dd4b39;
+    background-color: #dd4b39;
+    color: #dd4b39; }
+  .navbar-social-icons .twitter:hover .fa-circle-thin {
+    border: 1px solid #00aced;
+    background-color: #00aced;
+    color: #00aced; }
+  .navbar-social-icons .instagram:hover .fa-circle-thin {
+    border: 1px solid #517fa4;
+    background-color: #517fa4;
+    color: #517fa4; }
+
+#header-search {
+  position: relative; }
+  @media screen and (max-width: 767px) {
+    #header-search {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0; } }
+  #header-search li {
+    border-left: 1px solid #ffffff; }
+    @media screen and (max-width: 767px) {
+      #header-search li {
+        line-height: 1; } }
+  #header-search a {
+    display: inline-block;
+    color: #ffffff;
+    font: 18px/32px "MyriadProReg"; }
+    @media screen and (max-width: 991px) {
+      #header-search a {
+        font-size: 14px;
+        line-height: 22px; } }
+    @media screen and (max-width: 767px) {
+      #header-search a {
+        padding: 10px 14px; } }
+    #header-search a:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+      color: #25292B;
+      text-decoration: none; }
+      #header-search a:hover i {
+        color: #ffffff; }
+    #header-search a:focus, #header-search a:active {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.6);
+      color: #25292B; }
+      #header-search a:focus i, #header-search a:active i {
+        color: #ffffff; }
+    #header-search a i {
+      line-height: 32px; }
+      @media screen and (max-width: 991px) {
+        #header-search a i {
+          line-height: 22px; } }
+      @media screen and (max-width: 767px) {
+        #header-search a i {
+          float: none !important;
+          margin: 0;
+          font-size: 22px;
+          line-height: 30px; } }
+
+#search-input {
+  display: none;
+  position: absolute;
+  right: 0; }
+  #search-input .form-control {
+    font: 18px "MyriadProCond";
+    height: 45px;
+    min-width: 300px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
+    @media screen and (max-width: 420px) {
+      #search-input .form-control {
+        min-width: 250px; } }
+  #search-input button {
+    height: 45px;
+    color: #ffffff;
+    font: 18px "MyriadProBoldCond";
+    background-color: rgba(0, 0, 0, 0.6);
+    border-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
+    #search-input button:hover {
+      background-color: rgba(77, 199, 236, 0.8);
+      border-color: rgba(77, 199, 236, 0.8); }
+    #search-input button:focus, #search-input button:active {
+      outline: none; }
+  #search-input label {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font: 18px "MyriadProBoldCond";
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-color: rgba(0, 0, 0, 0.6);
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
+    #search-input label:hover, #search-input label.active {
+      background-color: rgba(255, 255, 255, 0.6);
+      color: #25292B;
+      text-decoration: none; }
+
+.main-banner-section {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto; }
+
+#main-carousel {
+  margin-bottom: 0; }
+  #main-carousel .slick-dots {
+    width: auto;
+    bottom: 80px;
+    right: 100px; }
+    @media screen and (max-width: 1199px) {
+      #main-carousel .slick-dots {
+        bottom: 10px; } }
+    @media screen and (max-width: 767px) {
+      #main-carousel .slick-dots {
+        bottom: 30px;
+        left: 50%;
+        right: auto;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%); } }
+    #main-carousel .slick-dots li {
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      border: 1px solid #4DC7EC; }
+      #main-carousel .slick-dots li:hover {
+        background-color: #4DC7EC; }
+    #main-carousel .slick-dots button:before {
+      content: ""; }
+    #main-carousel .slick-dots .slick-active {
+      background-color: #4DC7EC; }
+
+.home-search-input {
+  position: absolute;
+  left: 15%;
+  bottom: 140px;
+  z-index: 100;
+  color: #ffffff;
+  font-family: "MyriadProCond"; }
+  @media screen and (max-width: 991px) {
+    .home-search-input {
+      left: 5%; } }
+  .home-search-input .span-text {
+    padding: 0 25px;
+    font-size: 34px; }
+    .home-search-input .span-text strong {
+      font-family: "MyriadProBoldCond"; }
+  .home-search-input .filter-buttons {
+    padding: 5px 0;
+    background-color: rgba(0, 0, 0, 0.6); }
+  .home-search-input .btns {
+    display: inline-block;
+    float: right; }
+    .home-search-input .btns label {
+      margin-top: -5px;
+      font: 24px "MyriadProBoldCond";
+      line-height: 45px;
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+      border-radius: 0; }
+      .home-search-input .btns label.active, .home-search-input .btns label:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+        color: #25292B; }
+  .home-search-input .input-group {
+    position: absolute;
+    width: 400px;
+    top: 100%; }
+    @media screen and (max-width: 840px) {
+      .home-search-input .input-group {
+        right: 0; } }
+    .home-search-input .input-group input, .home-search-input .input-group button {
+      height: 60px;
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+      border-radius: 0; }
+    .home-search-input .input-group input {
+      font-size: 20px; }
+    .home-search-input .input-group button {
+      padding-right: 30px;
+      padding-left: 30px;
+      background-color: #4DC7EC;
+      border-color: #4DC7EC;
+      z-index: 2; }
+      .home-search-input .input-group button:focus, .home-search-input .input-group button:active {
+        outline: none;
+        background-color: #1497bf;
+        border-color: #1497bf; }
+      .home-search-input .input-group button:hover {
+        background-color: #1497bf;
+        border-color: #1497bf; }
+      .home-search-input .input-group button i {
+        font-size: 1.5em; }
+
+.recent-section {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #E5E4E4; }
+  .recent-section .section-title {
+    margin: 10px 0; }
+
+.gray-strip {
+  float: left;
+  width: 100%;
+  background-color: #666666; }
+
+.blue-filters {
+  background-color: #ffffff;
+  border: 1px solid #4DC7EC; }
+  @media screen and (max-width: 560px) {
+    .blue-filters {
+      float: none !important; } }
+  .blue-filters label {
+    color: #25292B;
+    font: 24px "MyriadProBoldCond";
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
+    .blue-filters label.active, .blue-filters label:hover {
+      background-color: #4DC7EC; }
+
+.category-filters {
+  background-color: #ffffff; }
+  @media screen and (max-width: 560px) {
+    .category-filters {
+      float: none !important;
+      display: inline-block; } }
+  .category-filters label {
+    margin-right: 2px !important;
+    padding: 10px 15px;
+    font: 14px "MyriadProReg";
+    color: #656565;
+    background-color: #E5E4E4;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
+    @media screen and (max-width: 560px) {
+      .category-filters label {
+        padding: 10px 8px; } }
+    .category-filters label:last-child {
+      margin-right: 0 !important; }
+    .category-filters label.active, .category-filters label:hover {
+      background-color: #ffffff;
+      color: #25292B;
+      -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2) inset;
+      -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2) inset;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2) inset; }
+
+.property-wrapper {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto;
+  min-height: 260px;
+  margin-top: 20px;
+  padding-top: 4px; }
+
+.small-padding {
+  padding-left: 8px;
+  padding-right: 8px; }
+  @media screen and (max-width: 560px) {
+    .small-padding {
+      width: 100% !important; } }
+
+.notify-section > div {
+  margin-top: 25px;
+  margin-bottom: 25px; }
+  @media screen and (max-width: 767px) {
+    .notify-section > div {
+      margin-top: 10px;
+      margin-bottom: 10px; } }
+.notify-section input, .notify-section button {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+.notify-section input {
+  font: 18px "MyriadProReg"; }
+.notify-section button {
+  padding: 8px 26px;
+  z-index: 2;
+  max-height: 46px;
+  background-color: #4DC7EC;
+  border-color: #4DC7EC; }
+  .notify-section button:hover {
+    background-color: #1497bf;
+    border-color: #1497bf; }
+  .notify-section button:active, .notify-section button:focus {
+    outline: none; }
+  .notify-section button i {
+    font-size: 1.5em; }
+.notify-section .view-more {
+  font: italic 14px/47px "MyriadProReg";
+  text-decoration: underline;
+  color: #656565; }
+  .notify-section .view-more:hover {
+    color: #4DC7EC; }
+  .notify-section .view-more:focus, .notify-section .view-more:active {
+    outline: none;
+    color: #4DC7EC; }
+
+.white-blue-section {
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); }
+  .white-blue-section > div {
+    min-height: 100px; }
+    .white-blue-section > div:last-child {
+      background-color: #4DC7EC; }
+
+.promo-item {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px; }
+  .promo-item .icon-wrapper i {
+    width: 80px;
+    height: 80px;
+    padding-top: 25px;
+    text-align: center;
+    background-color: #4DC7EC;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%; }
+  .promo-item .title {
+    margin-top: 10px;
+    margin-bottom: 4%;
+    font: 24px "MyriadProBoldCond";
+    color: #4DC7EC; }
+  .promo-item .promo-text {
+    padding: 0 25%; }
+    @media screen and (max-width: 767px) {
+      .promo-item .promo-text {
+        padding: 0 10%; } }
+
+.news-item {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 5% 10%; }
+  @media screen and (max-width: 767px) {
+    .news-item {
+      padding: 15px 5px; } }
+  .news-item.expanded {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px; }
+    .news-item.expanded .news-title {
+      color: #4DC7EC; }
+      .news-item.expanded .news-title h2 {
+        font: 60px "MyriadProCond";
+        color: #4DC7EC; }
+        @media screen and (max-width: 991px) {
+          .news-item.expanded .news-title h2 {
+            font-size: 30px; } }
+      .news-item.expanded .news-title .small {
+        color: #656565; }
+    .news-item.expanded .related-image {
+      margin-top: 25px;
+      margin-bottom: 25px; }
+    .news-item.expanded .related-description {
+      line-height: 1.6;
+      text-align: justify;
+      font-size: 18px; }
+      .news-item.expanded .related-description p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        font-size: 18px; }
+  .news-item .news-header {
+    display: table;
+    width: 100%; }
+  .news-item .date-badge {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100px; }
+    @media screen and (max-width: 767px) {
+      .news-item .date-badge {
+        width: 60px; } }
+  .news-item .news-title {
+    display: table-cell;
+    vertical-align: middle;
+    color: #ffffff; }
+    .news-item .news-title a {
+      color: #ffffff; }
+      .news-item .news-title a:hover {
+        color: #1497bf;
+        text-decoration: none; }
+      .news-item .news-title a:focus, .news-item .news-title a:active {
+        outline: none; }
+    .news-item .news-title h2 {
+      margin: 0;
+      font: 30px "MyriadProCond"; }
+      @media screen and (max-width: 767px) {
+        .news-item .news-title h2 {
+          font-size: 26px; } }
+    .news-item .news-title .small {
+      font: italic 14px "MyriadProReg"; }
+  .news-item .news-short-text {
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 14px; }
+    .news-item .news-short-text p {
+      color: #ffffff;
+      font-size: 14px; }
+  .news-item .read-more {
+    color: #ffffff;
+    font: italic 12px "MyriadProReg";
+    text-decoration: underline; }
+    .news-item .read-more:hover {
+      color: #1497bf;
+      text-decoration: underline; }
+    .news-item .read-more:focus, .news-item .read-more:active {
+      outline: none; }
+
+.rounded-wrapper {
+  display: table-cell;
+  width: 80px;
+  height: 80px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle; }
+  @media screen and (max-width: 767px) {
+    .rounded-wrapper {
+      width: 40px;
+      height: 40px; } }
+  .rounded-wrapper.blue {
+    color: #4DC7EC;
+    border: 1px solid #4DC7EC; }
+  .rounded-wrapper > span {
+    display: block; }
+  .rounded-wrapper .month {
+    font: 20px/0.9 "MyriadProCond"; }
+    @media screen and (max-width: 767px) {
+      .rounded-wrapper .month {
+        font-size: 14px;
+        line-height: .9; } }
+  .rounded-wrapper .day {
+    font: 40px/0.9 "MyriadProBoldCond"; }
+    @media screen and (max-width: 767px) {
+      .rounded-wrapper .day {
+        font-size: 20px;
+        line-height: .9; } }
+
+.contact-section {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 260px;
+  background: url("../imgs/contact-section-bg.jpg") no-repeat center center;
+  background-size: cover;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); }
+  .contact-section .contact-btn {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 250px;
+    height: 120px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.4);
+    -moz-border-radius: 0 0 120px 120px;
+    -webkit-border-radius: 0;
+    border-radius: 0 0 120px 120px; }
+    .contact-section .contact-btn span {
+      font: 42px/100px "MyriadProBoldCond";
+      color: #000000; }
+    .contact-section .contact-btn:hover {
+      text-decoration: none; }
+      .contact-section .contact-btn:hover span {
+        text-shadow: 0 0 6px #4DC7EC; }
+
+.site-url {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto; }
+  .site-url a {
+    display: block;
+    width: 100%;
+    padding: 30px 0;
+    font: 36px "MyriadProCond";
+    color: #999999;
+    text-decoration: none; }
+    @media screen and (max-width: 490px) {
+      .site-url a {
+        font-size: 9vw; } }
+    .site-url a:hover {
+      text-decoration: none;
+      color: #4DC7EC; }
+    .site-url a:focus, .site-url a:active {
+      outline: none; }
+
+#testimonials {
+  margin-bottom: 0;
+  padding: 0 15px; }
+  #testimonials .testimony {
+    padding: 15px 40px;
+    border: 1px solid #cccccc; }
+    #testimonials .testimony p {
+      font: italic 14px "MyriadProReg";
+      color: #999999; }
+
+.testimonials-title {
+  font: 36px "MyriadProBoldCond";
+  color: #656565;
+  margin: 5% 0; }
+
+#testimonials-nav {
+  padding: 0 40px; }
+  @media screen and (max-width: 991px) {
+    #testimonials-nav {
+      padding: 0; } }
+  #testimonials-nav .nav-item {
+    position: relative;
+    padding: 20px;
+    cursor: pointer;
+    text-align: center; }
+    #testimonials-nav .nav-item h4 {
+      font: 18px "MyriadProBoldCond";
+      color: #000000; }
+      #testimonials-nav .nav-item h4 .small {
+        margin-left: 5px;
+        font-family: "MyriadProCond"; }
+    #testimonials-nav .nav-item.active .marker, #testimonials-nav .nav-item:hover .marker {
+      display: block; }
+    #testimonials-nav .nav-item.active .nav-image img, #testimonials-nav .nav-item:hover .nav-image img {
+      border-color: #4DC7EC; }
+    #testimonials-nav .nav-item.active h4, #testimonials-nav .nav-item:hover h4 {
+      color: #4DC7EC; }
+      #testimonials-nav .nav-item.active h4 .small, #testimonials-nav .nav-item:hover h4 .small {
+        color: #4DC7EC; }
+  #testimonials-nav .marker {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  #testimonials-nav .nav-image {
+    display: inline-block;
+    width: 100%;
+    max-width: 225px;
+    padding: 40px 40px 0; }
+    @media screen and (max-width: 1199px) {
+      #testimonials-nav .nav-image {
+        padding: 40px 20px 0; } }
+    @media screen and (max-width: 767px) {
+      #testimonials-nav .nav-image {
+        padding: 40px 5px 0; } }
+    #testimonials-nav .nav-image img {
+      border: 3px solid #cccccc;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%; }
+
+.properties-carousel {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px; }
+  @media screen and (max-width: 490px) {
+    .properties-carousel {
+      padding-left: 0;
+      padding-right: 0; } }
+  .properties-carousel .property-item {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-height: 260px; }
+
+.arrows {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color: rgba(77, 199, 236, 0.8);
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 40px;
+  border-radius: 50%;
+  padding-top: 4px;
+  cursor: pointer;
+  z-index: 100; }
+  .arrows:hover {
+    background-color: #4dc7ec; }
+  .arrows.arrow-left {
+    left: 0; }
+  .arrows.arrow-right {
+    right: 0; }
+  @media screen and (max-width: 560px) {
+    .arrows#nav-left, .arrows#nav-right {
+      width: 30px;
+      height: 30px;
+      font-size: 2em;
+      padding-top: 0; } }
+  .arrows#nav-left {
+    left: -10px; }
+    @media screen and (max-width: 560px) {
+      .arrows#nav-left {
+        left: 5px; } }
+  .arrows#nav-right {
+    right: -10px; }
+    @media screen and (max-width: 560px) {
+      .arrows#nav-right {
+        right: 5px; } }
+  .arrows#tLeft, .arrows#tRight {
+    color: #e6e6e6;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6; }
+    .arrows#tLeft:hover, .arrows#tRight:hover {
+      color: #b3b3b3;
+      border-color: #b3b3b3; }
+  .arrows#tLeft {
+    left: 0; }
+  .arrows#tRight {
+    right: 0; }
+
+.blue-bg {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 130px;
+  background-color: #4DC7EC; }
+
+.light-gray-bg {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 2px;
+  background-color: #E5E4E4;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); }
+  .light-gray-bg.contact-page {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; }
+  .light-gray-bg.property-list-page {
+    padding-top: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; }
+
+.blog-item {
+  margin-bottom: 5px;
+  padding: 20px 30px;
+  background-color: #ffffff; }
+  @media screen and (max-width: 767px) {
+    .blog-item {
+      padding: 20px 15px; } }
+  .blog-item > div {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 10px; }
+    @media screen and (max-width: 767px) {
+      .blog-item > div {
+        display: block; } }
+    @media screen and (min-width: 992px) {
+      .blog-item > div:first-child {
+        width: 35%; } }
+    @media screen and (min-width: 767px) and (max-width: 991px) {
+      .blog-item > div:first-child {
+        width: 50%; } }
+    @media screen and (max-width: 767px) {
+      .blog-item > div:first-child {
+        margin-bottom: 20px; } }
+    @media screen and (max-width: 767px) {
+      .blog-item > div.related-image {
+        padding: 0; } }
+  .blog-item .item-title {
+    display: block;
+    color: #4DC7EC;
+    font: 36px "MyriadProCond"; }
+    .blog-item .item-title:hover {
+      color: #1497bf;
+      text-decoration: none; }
+    .blog-item .item-title:focus, .blog-item .item-title:active {
+      outline: none; }
+    .blog-item .item-title h1 {
+      margin-top: 10px;
+      margin-bottom: 0; }
+      @media screen and (max-width: 767px) {
+        .blog-item .item-title h1 {
+          font-size: 26px; } }
+  .blog-item .small {
+    font: italic 14px "MyriadProReg";
+    color: #656565; }
+  .blog-item .item-short-text {
+    margin-top: 15px;
+    font: 18px "MyriadProReg";
+    color: #656565; }
+    .blog-item .item-short-text p {
+      font-size: 18px; }
+      @media screen and (max-width: 767px) {
+        .blog-item .item-short-text p {
+          font-size: 16px; } }
+  .blog-item .read-more {
+    font: italic 14px "MyriadProReg";
+    color: #4DC7EC;
+    text-decoration: underline; }
+    .blog-item .read-more:focus, .blog-item .read-more:active {
+      outline: none; }
+    .blog-item .read-more:hover {
+      color: #1497bf; }
+
+.pagination {
+  margin: 0; }
+  .pagination .active > a {
+    background-color: #ffffff;
+    color: #25292B;
+    border-color: #4DC7EC; }
+    .pagination .active > a:hover {
+      background-color: #ffffff;
+      color: #25292B;
+      border-color: #4DC7EC; }
+  .pagination > li {
+    display: inline-block; }
+    .pagination > li:first-child.disabled > a {
+      border-color: #4DC7EC; }
+    .pagination > li:first-child > a {
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+      border-radius: 0; }
+    .pagination > li:last-child > a {
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+      border-radius: 0; }
+    .pagination > li > a {
+      background-color: #4DC7EC;
+      color: #ffffff;
+      border-color: #4DC7EC; }
+      @media screen and (max-width: 490px) {
+        .pagination > li > a {
+          padding: 5px 10px; } }
+      .pagination > li > a:hover {
+        background-color: #ffffff;
+        color: #25292B;
+        border: 1px solid #4DC7EC; }
+      .pagination > li > a:focus, .pagination > li > a:active {
+        outline: none;
+        background-color: #ffffff;
+        color: #25292B;
+        border: 1px solid #4DC7EC; }
+
+.page-banner {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto; }
+  .page-banner .banner-text {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    text-align: center;
+    font: 36px "MyriadProCond";
+    color: white;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%); }
+    .page-banner .banner-text strong {
+      font-family: "MyriadProBoldCond"; }
+  .page-banner.property-banner {
+    height: 290px;
+    background: url("../imgs/property-banner-bg.jpg") no-repeat center center;
+    background-size: cover; }
+    .page-banner.property-banner .banner-text {
+      top: 40%; }
+      @media screen and (max-width: 767px) {
+        .page-banner.property-banner .banner-text {
+          display: none; } }
+  .page-banner.property-list-banner {
+    height: 450px;
+    background: url("../imgs/property-list-banner.jpg") no-repeat center center;
+    background-size: cover; }
+
+.search-strip {
+  position: absolute;
+  width: 100%;
+  height: 65px;
+  bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.4); }
+  .search-strip h2 {
+    font: 36px "MyriadProCond";
+    color: #ffffff;
+    margin: 10px; }
+    .search-strip h2 strong {
+      font-family: "MyriadProBoldCond"; }
+  .search-strip .search-button {
+    float: right;
+    margin-top: -5px;
+    margin-right: 10%;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    background-color: #4DC7EC;
+    border-color: #4DC7EC; }
+    .search-strip .search-button:hover {
+      background-color: #1497bf;
+      border-color: #1497bf; }
+    .search-strip .search-button:focus, .search-strip .search-button:active {
+      outline: none; }
+
+.breadcrumb {
+  background-color: transparent;
+  font: 12px "MyriadProReg"; }
+  @media screen and (max-width: 490px) {
+    .breadcrumb {
+      padding-left: 0;
+      padding-right: 0; } }
+  .breadcrumb > .active {
+    color: #999999; }
+  .breadcrumb > li + li:before {
+    content: "| ";
+    color: #999999; }
+  .breadcrumb a {
+    color: #999999;
+    text-decoration: underline; }
+
+.contact-page {
+  margin-top: 5%; }
+
+.contact-form {
+  margin-bottom: 5%;
+  background-color: #666666;
+  padding-top: 20px; }
+  .contact-form .form-control {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
+    .contact-form .form-control.message-box {
+      min-height: 250px; }
+
+.contact-info {
+  background-color: #ffffff;
+  padding-top: 20px; }
+  @media screen and (max-width: 767px) {
+    .contact-info {
+      text-align: center; } }
+  .contact-info > div {
+    padding-left: 10px; }
+    @media screen and (max-width: 767px) {
+      .contact-info > div {
+        padding-left: 0; } }
+
+.subtitle {
+  float: left;
+  width: 100%; }
+  .subtitle h3 {
+    margin-top: 0;
+    font: 30px "MyriadProCond";
+    color: #656565; }
+    .subtitle h3 strong {
+      font-family: "MyriadProBoldCond"; }
+
+.brokers {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #CCCCCC; }
+  @media screen and (max-width: 767px) {
+    .brokers {
+      text-align: center; } }
+
+.profile {
+  display: inline-block;
+  margin-right: 25px; }
+  .profile .name {
+    margin-bottom: 0;
+    font: 18px "MyriadProBoldCond";
+    color: #000000; }
+  .profile a {
+    font: 18px "MyriadProCond";
+    color: #000000; }
+    .profile a:focus, .profile a:active {
+      outline: none; }
+    .profile a:hover {
+      text-decoration: none;
+      color: #4DC7EC; }
+
+.locations {
+  float: left;
+  width: 100%; }
+  .locations li {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .locations .location-item {
+    display: table; }
+    .locations .location-item > div {
+      display: table-cell;
+      vertical-align: middle; }
+    .locations .location-item .icon {
+      text-align: center;
+      min-width: 4em; }
+      .locations .location-item .icon i {
+        color: #666666; }
+    .locations .location-item .location-content {
+      padding-left: 15px; }
+      .locations .location-item .location-content p {
+        font: 18px "MyriadProReg";
+        color: #656565; }
+      .locations .location-item .location-content a {
+        font: 18px "MyriadProReg";
+        color: #656565; }
+        .locations .location-item .location-content a:focus, .locations .location-item .location-content a:active {
+          outline: none; }
+        .locations .location-item .location-content a:hover {
+          color: #4DC7EC;
+          text-decoration: none; }
+
+.contact-socials {
+  margin-top: 20px;
+  margin-left: 0; }
+  @media screen and (max-width: 767px) {
+    .contact-socials {
+      float: none !important; } }
+  @media screen and (max-width: 767px) {
+    .contact-socials > li {
+      padding-left: 0;
+      padding-right: 0; } }
+  .contact-socials i.fa {
+    width: 70px;
+    height: 70px;
+    padding-top: 10px;
+    font-size: 3.5em;
+    color: #656565;
+    border: 1px solid #656565;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    -webkit-transition: all linear 0.15s;
+    -moz-transition: all linear 0.15s;
+    -ms-transition: all linear 0.15s;
+    -o-transition: all linear 0.15s;
+    transition: all linear 0.15s; }
+    @media screen and (max-width: 767px) {
+      .contact-socials i.fa {
+        width: 65px;
+        height: 65px; } }
+    .contact-socials i.fa:hover {
+      color: #ffffff; }
+    .contact-socials i.fa.fa-facebook:hover {
+      background-color: #3b5998;
+      border-color: #3b5998; }
+    .contact-socials i.fa.fa-google-plus:hover {
+      background-color: #dd4b39;
+      border-color: #dd4b39; }
+    .contact-socials i.fa.fa-twitter:hover {
+      background-color: #00aced;
+      border-color: #00aced; }
+    .contact-socials i.fa.fa-instagram:hover {
+      background-color: #517fa4;
+      border-color: #517fa4; }
+
+.property-page {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+
+.gallery-stuff {
+  padding: 0;
+  background-color: #ffffff; }
+
+#property-gallery {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto;
+  background-color: #333333; }
+
+#main-image {
+  margin-bottom: 5px; }
+
+#nav-images {
+  margin-bottom: 5px; }
+  #nav-images .nav-item {
+    padding: 0 2px;
+    opacity: .4;
+    cursor: pointer; }
+    #nav-images .nav-item.slick-center {
+      opacity: 1; }
+
+.property-description {
+  float: left;
+  width: 100%;
+  padding: 20px 15px;
+  font: 16px "MyriadProReg";
+  color: #656565;
+  background-color: #ffffff; }
+  @media screen and (max-width: 767px) {
+    .property-description {
+      padding: 0 15px; }
+      .property-description p {
+        text-align: justify; } }
+  .property-description .subtitle {
+    margin: 20px 0;
+    font: 24px "MyriadProBoldCond";
+    color: #656565; }
+
+.amenities {
+  display: table;
+  float: left;
+  width: 100%; }
+  @media screen and (max-width: 767px) {
+    .amenities {
+      display: block; } }
+  .amenities .amenities-list {
+    display: table-cell;
+    text-align: left; }
+    @media screen and (max-width: 767px) {
+      .amenities .amenities-list {
+        display: block;
+        float: left;
+        width: 30%;
+        font-size: 14px;
+        padding-left: 10px; } }
+    @media screen and (max-width: 390px) {
+      .amenities .amenities-list {
+        width: 100%; } }
+
+.side-content {
+  padding: 0; }
+
+.property-details {
+  float: left;
+  width: 100%;
+  padding: 0 20px 20px;
+  background-color: #ffffff;
+  font: 14px "MyriadProReg";
+  color: #656565; }
+  .property-details .title {
+    font: 30px "MyriadProCond";
+    color: #656565; }
+    .property-details .title strong {
+      font-family: "MyriadProBoldCond"; }
+  .property-details .subtitle {
+    font: 18px "MyriadProBoldCond";
+    color: #656565; }
+  .property-details p {
+    font: 14px "MyriadProReg";
+    color: #656565; }
+
+.side-map {
+  float: left;
+  width: 100%; }
+
+.fancy-buttons {
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 10%; }
+  @media screen and (max-width: 767px) {
+    .fancy-buttons {
+      padding: 15px; } }
+  .fancy-buttons a.btn {
+    margin-bottom: 20px;
+    background-color: #4DC7EC;
+    border-color: #4DC7EC;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    font: 24px "MyriadProBoldCond"; }
+    @media screen and (max-width: 991px) {
+      .fancy-buttons a.btn {
+        font-size: 18px; } }
+    .fancy-buttons a.btn:focus, .fancy-buttons a.btn:active {
+      outline: none; }
+    .fancy-buttons a.btn:hover {
+      background-color: #1497bf;
+      border-color: #1497bf; }
+  .fancy-buttons i.fa {
+    margin-right: 10px;
+    vertical-align: middle; }
+
+.side-form {
+  float: left;
+  width: 100%;
+  padding: 5% 10%; }
+  @media screen and (max-width: 991px) {
+    .side-form {
+      padding-left: 15px;
+      padding-right: 15px; } }
+  .side-form form {
+    float: left;
+    width: 100%; }
+    .side-form form .gray-bg {
+      float: left;
+      width: 100%;
+      background-color: #CCCCCC; }
+  .side-form h4 {
+    padding: 0 15px;
+    font: 28px "MyriadProCond";
+    color: #656565; }
+    .side-form h4 strong {
+      font-family: "MyriadProBoldCond"; }
+  .side-form button {
+    margin-top: 10px; }
+  .side-form .broker-name {
+    float: left;
+    width: 100%;
+    padding-bottom: 10px; }
+    .side-form .broker-name h5 {
+      margin: 0;
+      font: 18px "MyriadProBoldCond";
+      color: #000000; }
+    .side-form .broker-name a {
+      font: 18px "MyriadProCond";
+      color: #000000; }
+      .side-form .broker-name a:focus, .side-form .broker-name a:active {
+        outline: none; }
+      .side-form .broker-name a:hover {
+        color: #1497bf;
+        text-decoration: none; }
+
+.broker-image {
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.details-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center; }
+  .details-info ul {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff; }
+    .details-info ul li {
+      padding: 0 0 0 10px; }
+  .details-info i.fa {
+    padding: 2px 6px;
+    font-size: 2em;
+    background-color: rgba(77, 199, 236, 0.8); }
+  .details-info span {
+    font: 24px "MyriadProCond"; }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      .details-info span {
+        font: 18px/1.8em "MyriadProBoldCond"; } }
+    .details-info span strong {
+      font-family: "MyriadProBoldCond"; }
+
+.footer {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto; }
+
+.footer-menu {
+  float: left;
+  width: 100%;
+  background-color: #333333;
+  line-height: .9; }
+  .footer-menu .navbar-nav {
+    display: inline-block;
+    float: none; }
+    .footer-menu .navbar-nav li:not(:last-child) {
+      border-right: 1px solid #ffffff; }
+    .footer-menu .navbar-nav .active a {
+      background-color: #ababab;
+      color: #25292B; }
+    .footer-menu .navbar-nav a {
+      color: #ffffff;
+      font: 14px "MyriadProReg"; }
+      .footer-menu .navbar-nav a:hover {
+        color: #25292B;
+        background-color: #ababab; }
+
+.footer-sections {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 3% 0 5%;
+  background-color: #000000; }
+  .footer-sections .row > div {
+    padding-top: 3%;
+    padding-bottom: 3%; }
+    .footer-sections .row > div:nth-child(2) {
+      border-right: 1px solid #ffffff;
+      border-left: 1px solid #ffffff; }
+      @media screen and (max-width: 767px) {
+        .footer-sections .row > div:nth-child(2) {
+          border: none; } }
+  @media screen and (max-width: 767px) {
+    .footer-sections .site-info {
+      padding: 20px 0;
+      border-top: 1px solid #ffffff;
+      border-bottom: 1px solid #ffffff; } }
+  .footer-sections .site-info p {
+    margin-bottom: 20px;
+    font: 12px "MyriadProReg";
+    color: #ffffff; }
+  .footer-sections .site-info a {
+    color: #ffffff;
+    text-decoration: underline; }
+    .footer-sections .site-info a:hover {
+      color: #4DC7EC; }
+    .footer-sections .site-info a:focus, .footer-sections .site-info a:active {
+      outline: none; }
+  .footer-sections .site-contact {
+    margin-top: -20px; }
+    @media screen and (max-width: 767px) {
+      .footer-sections .site-contact {
+        margin: 0; } }
+    .footer-sections .site-contact a {
+      color: #ffffff; }
+  .footer-sections .phone {
+    margin: 15px 0; }
+    .footer-sections .phone a {
+      font: 24px "MyriadProBoldCond"; }
+      .footer-sections .phone a:hover {
+        text-decoration: none;
+        color: #4DC7EC; }
+      .footer-sections .phone a:focus, .footer-sections .phone a:active {
+        outline: none; }
+  .footer-sections .email a {
+    font: 12px "MyriadProReg"; }
+    .footer-sections .email a:hover {
+      color: #4DC7EC; }
+    .footer-sections .email a:focus, .footer-sections .email a:active {
+      outline: none; }
