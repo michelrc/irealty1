@@ -53,7 +53,7 @@
             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
                 <div id="newsletter_message" class="alert1 alert-success" hidden="hidden"></div>
                 <div class="input-group">
-                    <input type="text" title="<?php echo t('The email is not valid')?>" type="text" id="newsletter_input" placeholder="<?php if(isset($newsletter_placeholder)):echo $newsletter_placeholder;else:?>Get noticed of new properties added<?php endif?>"
+                    <input type="text" title="<?php echo Yii::app()->getLanguage() == 'en' ? t('The email is not valid'):t('Correo incorrecto') ?>" type="text" id="newsletter_input" placeholder="<?php if(isset($newsletter_placeholder)):echo $newsletter_placeholder;else:?>Get noticed of new properties added<?php endif?>"
                            class="form-control input-lg"><span class="input-group-btn">
             <button onclick="add_subscribers()" class="btn btn-primary btn-lg hover-transition"><i class="fa fa-angle-double-right fa-inverse"></i>
             </button></span>

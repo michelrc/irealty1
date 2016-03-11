@@ -44,7 +44,7 @@
         </div>
         <div class="tab-pane" id="product_panel_tab2">
             <div class="widget-box">
-                <?php $this->renderPartial('_formGeneralInformation', array('form' => $form, 'model' => $model))?>
+                <?php $this->renderPartial('_formGeneralInformation', array('form' => $form, 'model' => $model, 'criteria' => $criteria))?>
             </div>
         </div>
         <div class="tab-pane" id="product_panel_tab3">

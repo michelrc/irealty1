@@ -19,6 +19,7 @@ class Subscribe extends CFormModel
 			array('email', 'required'),
 			// email has to be a valid email address
 			array('email', 'email'),
+			array('email', 'unique'),
 		);
 	}
 

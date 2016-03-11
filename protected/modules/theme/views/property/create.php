@@ -19,5 +19,6 @@ $this->title = Yii::t('YcmModule.ycm',
 $this->renderPartial('_form', array(
     'model' => $model,
     'gallery_model' => $gallery_model,
-    'buttons' => 'create'));
+    'buttons' => 'create',
+    'criteria' => $criteria));
 

@@ -50,14 +50,11 @@ public function accessRules() {
 
 		$this->performAjaxValidation($model, 'province-form');
 
-        if($model->count() >= 1)
-        {
-            $model = $model::model()->find();
-            $this->redirect(array("update?id=$model->id"));
-        }
-
-
-
+//        if($model->count() >= 1)
+//        {
+//            $model = $model::model()->find();
+//            $this->redirect(array("update?id=$model->id"));
+//        }
 
 		if (isset($_POST['Province'])) {
 			$model->setAttributes($_POST['Province']);
@@ -121,11 +118,11 @@ public function actionDelete($id)
 		$model = new Province('search');
 		//$model->unsetAttributes();
 
-        if($model->count() >= 1)
-        {
-            $model = $model::model()->find();
-            $this->redirect(array("update?id=$model->id"));
-        }
+//        if($model->count() >= 1)
+//        {
+//            $model = $model::model()->find();
+//            $this->redirect(array("update?id=$model->id"));
+//        }
 
 		if (isset($_GET['Province']))
 			$model->setAttributes($_GET['Province']);

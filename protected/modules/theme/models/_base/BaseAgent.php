@@ -15,153 +15,169 @@
  * @property string $email
  * @property string $contact_phone1
  * @property string $contact_phone2
+ * @property string $active
+ * @property string $best_agent
+ * @property string $create_time
  *
  * @property Property[] $properties
  * @property Date2TimeBehavior $date2time
  * @property CurrencyBehavior $currency
  * @property ImageARBehavior $imageAR
-
  */
-abstract class BaseAgent extends I18NInTableAdapter {
+abstract class BaseAgent extends I18NInTableAdapter
+{
 // many to many relationship
-            public $Property;
-    
-/* si tiene una imagen pa subir con ImageARBehavior, descomente la linea siguiente
-// public $recipeImg;
+    public $Property;
 
-    /**
-    * Behaviors.
-    * @return array
-    */
+    /* si tiene una imagen pa subir con ImageARBehavior, descomente la linea siguiente
+    // public $recipeImg;
+
+        /**
+        * Behaviors.
+        * @return array
+        */
     public $recipeImg1;
-    function behaviors() {
-        return CMap::mergeArray(parent::behaviors(), array(
-                
 
-                                '_photo' => array(
-                    'class' => 'ImageARBehavior',
-                    'attribute' => 'recipeImg1', // this must exist
-                    'extension' => 'jpg,gif,png', // possible extensions, comma separated
-                    'prefix' => 'img1_',
-                    'relativeWebRootFolder' => '/images/Agent',
-                    'formats' => array(
+    function behaviors()
+    {
+        return CMap::mergeArray(parent::behaviors(), array(
+            '_photo' => array(
+                'class' => 'ImageARBehavior',
+                'attribute' => 'recipeImg1', // this must exist
+                'extension' => 'jpg,gif,png', // possible extensions, comma separated
+                'prefix' => 'img1_',
+                'relativeWebRootFolder' => '/images/Agent',
+                'formats' => array(
                     // create a thumbnail for used in the view datails
                     'thumb' => array(
-                    'suffix' => '_thumb',
-                    'process' => array('resize' => array(50, 50)),
+                        'suffix' => '_thumb',
+                        'process' => array('resize' => array(50, 50)),
                     ),
                     'normal' => array(
-                    'suffix' => '_normal',
+                        'suffix' => '_normal',
 
-                                        'process' => array('resize' => array(118,118, 1)),
-                                        ),
-                    // and override the default :
+                        'process' => array('resize' => array(118, 118, 1)),
                     ),
+                    // and override the default :
+                ),
 
-                    'defaultName' => 'default', // when no file is associated, this one is used
-                            // defaultName need to exist in the relativeWebRootFolder path, and prefixed by prefix,
-                            // and with one of the possible extensions. if multiple formats are used, a default file must exist
-                            // for each format. Name is constructed like this :
-                            //     {prefix}{name of the default file}{suffix}{one of the extension}
-                ),
-                
+                'defaultName' => 'default', // when no file is associated, this one is used
+                // defaultName need to exist in the relativeWebRootFolder path, and prefixed by prefix,
+                // and with one of the possible extensions. if multiple formats are used, a default file must exist
+                // for each format. Name is constructed like this :
+                //     {prefix}{name of the default file}{suffix}{one of the extension}
+            ),
 
-                                'files' => array(
-                     'class'=>'application.modules.ycm.behaviors.FileBehavior',
-                ),
-                'date2time' => array(
-                    'class' => 'ycm.behaviors.Date2TimeBehavior',
-                    'attributes'=>'',
-                    'format'=>'Y-m-d',
-                ),
-                'datetime2time' => array(
-                    'class' => 'ycm.behaviors.Date2TimeBehavior',
-                    'attributes'=>'',
-                    'format'=>'Y-m-d H:i:s',
-                ),
-                'currency' => array(
-                    'class' => 'ycm.behaviors.CurrencyBehavior',
-                    'attributes'=>'',
-                ),
-                            ));
+
+            'files' => array(
+                'class' => 'application.modules.ycm.behaviors.FileBehavior',
+            ),
+            'date2time' => array(
+                'class' => 'ycm.behaviors.Date2TimeBehavior',
+                'attributes' => '',
+                'format' => 'Y-m-d',
+            ),
+            'datetime2time' => array(
+                'class' => 'ycm.behaviors.Date2TimeBehavior',
+                'attributes' => '',
+                'format' => 'Y-m-d H:i:s',
+            ),
+            'currency' => array(
+                'class' => 'ycm.behaviors.CurrencyBehavior',
+                'attributes' => '',
+            ),
+            'CTimestampBehavior' => array(
+                'class' => 'zii.behaviors.CTimestampBehavior',
+                'createAttribute' => 'create_time',
+            )));
     }
 
 
-	public static function model($className=__CLASS__) {
-		return parent::model($className);
-	}
+    public static function model($className = __CLASS__)
+    {
+        return parent::model($className);
+    }
 
-	public function tableName() {
-		return 'agent';
-	}
+    public function tableName()
+    {
+        return 'agent';
+    }
 
-	public static function label($n = 1) {
-		return self::model()->t_model('Agent|Agents', $n);
-	}
+    public static function label($n = 1)
+    {
+        return self::model()->t_model('Agent|Agents', $n);
+    }
 
-	public static function representingColumn() {
-		return 'name';
-	}
+    public static function representingColumn()
+    {
+        return 'name';
+    }
 
-    public function i18nAttributes() {
+    public function i18nAttributes()
+    {
+        return array();
+    }
+
+    public function rules()
+    {
         return array(
+            array('id, name, photo, email', 'required'),
+            array('id', 'length', 'max' => 50),
+            array('name, photo, email, contact_phone1, contact_phone2', 'length', 'max' => 255),
+            array('contact_phone1, contact_phone2', 'default', 'setOnEmpty' => true, 'value' => null),
+            array('active, best_agent', 'numerical'),
+
+            /* descomente las lineas siguientes si quiere subir una image con ImageARBehavior*/
+            array('recipeImg1', 'file', 'on' => 'insert', 'allowEmpty' => false, 'types' => 'jpg,jpeg,gif,png,JPG,GIF,JPEG,PNG', 'maxSize' => 1024 * 1024 * 6),
+            array('recipeImg1', 'file', 'on' => 'update', 'allowEmpty' => true, 'types' => 'jpg,jpeg,gif,png,JPG,GIF,JPEG,PNG', 'maxSize' => 1024 * 1024 * 6),
+            array('recipeImg1', 'safe'),
+
+
+            array('id, name, photo, email, contact_phone1, contact_phone2, active, best_agent, create_time', 'safe', 'on' => 'search'),
+            array('Property, create_time', 'safe'),
         );
     }
 
-	public function rules() {
-		return array(
-			array('id, name, photo, email', 'required'),
-			array('id', 'length', 'max'=>50),
-			array('name, photo, email, contact_phone1, contact_phone2', 'length', 'max'=>255),
-			array('contact_phone1, contact_phone2', 'default', 'setOnEmpty' => true, 'value' => null),
+    public function relations()
+    {
+        return array(
+            'properties' => array(self::HAS_MANY, 'Property', 'agent'),
+        );
+    }
 
-/* descomente las lineas siguientes si quiere subir una image con ImageARBehavior*/
-    array('recipeImg1', 'file', 'on'=>'insert', 'allowEmpty'=>false, 'types'=>'jpg,jpeg,gif,png,JPG,GIF,JPEG,PNG', 'maxSize'=>1024*1024*6),
-array('recipeImg1', 'file', 'on'=>'update', 'allowEmpty'=>true, 'types'=>'jpg,jpeg,gif,png,JPG,GIF,JPEG,PNG', 'maxSize'=>1024*1024*6),
-array('recipeImg1', 'safe'),
+    public function pivotModels()
+    {
+        return array();
+    }
 
+    public function attributeLabels()
+    {
+        return array(
+            'id' => $this->t_label('ID'),
+            'name' => $this->t_label('Name'),
+            'photo' => $this->t_label('Photo Alt'),
+            'email' => $this->t_label('Email'),
+            'contact_phone1' => $this->t_label('Contact phone 1'),
+            'contact_phone2' => $this->t_label('Contact phone 2'),
+            'recipeImg1' => $this->t_label('Photo'),
+            'active' => $this->t_label('Active'),
+            'best_agent' => $this->t_label('Best Agent'),
+        );
+    }
 
-			array('id, name, photo, email, contact_phone1, contact_phone2', 'safe', 'on'=>'search'),
-            array('Property', 'safe'),
-		);
-	}
+    public function search()
+    {
+        $criteria = new CDbCriteria;
 
-	public function relations() {
-		return array(
-			'properties' => array(self::HAS_MANY, 'Property', 'agent'),
-		);
-	}
+        $criteria->compare('id', $this->id, true);
+        $criteria->compare('name', $this->name, true);
+        $criteria->compare('photo', $this->photo, true);
+        $criteria->compare('email', $this->email, true);
+        $criteria->compare('contact_phone1', $this->contact_phone1, true);
+        $criteria->compare('contact_phone2', $this->contact_phone2, true);
 
-	public function pivotModels() {
-		return array(
-		);
-	}
-
-	public function attributeLabels() {
-		return array(
-			'id' => $this->t_label('ID'),
-			'name' => $this->t_label('Name'),
-			'photo' => $this->t_label('Photo Alt'),
-			'email' => $this->t_label('Email'),
-			'contact_phone1' => $this->t_label('Contact phone 1'),
-			'contact_phone2' => $this->t_label('Contact phone 2'),
-			    'recipeImg1' => $this->t_label('Photo'),
-
-		);
-	}
-
-	public function search() {
-		$criteria = new CDbCriteria;
-
-		$criteria->compare('id', $this->id, true);
-		$criteria->compare('name', $this->name, true);
-		$criteria->compare('photo', $this->photo, true);
-		$criteria->compare('email', $this->email, true);
-		$criteria->compare('contact_phone1', $this->contact_phone1, true);
-		$criteria->compare('contact_phone2', $this->contact_phone2, true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-            		));
-	}
+        return new CActiveDataProvider($this, array(
+            'criteria' => $criteria,
+        ));
+    }
 }

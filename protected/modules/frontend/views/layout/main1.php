@@ -411,13 +411,13 @@ echo $content;
 <script src="/static/js/jquery-ui.min.js"></script>
 <script src="/static/js/animate-plus.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/jquery.maskedinput.min.js"></script>
 <script src="/static/slick/slick.min.js"></script>
 <script src="/static/js/html5shiv.js"></script>
 <!--<script src="/static/js/jquery.autocomplete.js"></script>-->
 <script src="/static/js/jquery-validations.js"></script>
 <script src="/static/js/jquery-validate.bootstrap-tooltip.js"></script>
 <script src="/static/js/jquery.share.js"></script>
-
 <script src="/static/js/site-scripts.js"></script>
 
 <script src="/static/js/custom.js"></script>

@@ -234,3 +234,9 @@ function add_subscribers()
         )
     }
 }
+
+$("#contact_phone").mask("(999)999-9999");
+
+$('#search_form').click(function(){
+    $(this).parents("form").submit();
+})

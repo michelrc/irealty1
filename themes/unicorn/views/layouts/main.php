@@ -280,7 +280,7 @@ cs()->registerScriptFile(thu('js/jquery.flot.min.js'), CClientScript::POS_END);
 cs()->registerScriptFile(thu('js/jquery.flot.resize.min.js'), CClientScript::POS_END);
 cs()->registerScriptFile(thu('js/jquery.nicescroll.min.js'), CClientScript::POS_END);
 cs()->registerScriptFile(thu('js/jquery.maskMoney.js'), CClientScript::POS_END);
-//cs()->registerScriptFile(thu('js/admin_custom.js'), CClientScript::POS_END);
+cs()->registerScriptFile(thu('js/jquery.maskedinput-1.0.js'), CClientScript::POS_END);
 cs()->registerScriptFile(thu('js/redactor.min.js'), CClientScript::POS_END);
 cs()->registerScriptFile(thu('js/redactor.js'), CClientScript::POS_END);
 cs()->registerScriptFile(thu('js/jquery.fancybox.js'), CClientScript::POS_END);

@@ -191,6 +191,13 @@ class ThemeModule extends CWebModule
                     ),
                     array(
                         'icon' => 'info-sign',
+                        'label' => Yii::t('sideMenu', 'Property condition'),
+                        'url' => array('/theme/propertyCondition/admin'),
+                        'active' => Yii::app()->controller->module->id == 'theme' && Yii::app()->controller->id == 'propertyCondition',
+                        'visible' => user()->isAdmin,
+                    ),
+                    array(
+                        'icon' => 'info-sign',
                         'label' => Yii::t('sideMenu', 'Properties'),
                         'url' => array('/theme/property/admin'),
                         'active' => Yii::app()->controller->module->id == 'theme' && Yii::app()->controller->id == 'property',

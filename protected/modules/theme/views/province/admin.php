@@ -47,12 +47,11 @@ $this->breadcrumbs = array(
 
 <div class="form-actions">
 
-    <?php if($model->count() < 1): ?>
-        <p><?php echo t('Up to')?> 1 <?php echo t('row(s)')?>.</p>
+<!--    --><?php //if($model->count() < 1): ?>
+<!--        <p>--><?php //echo t('Up to')?><!-- 1 --><?php //echo t('row(s)')?><!--.</p>-->
 <?php if(user()->isAdmin):?>
-
     <?php echo CHtml::link(TbHtml::icon('glyphicon glyphicon-plus'). t('Add item'),array('create'),array('class'=>'btn btn-default'));?>
-<?php endif?>
+<?php //endif?>
 <?php endif?>
 
 </div>

@@ -106,6 +106,7 @@ class IndexAction extends CAction
         }
 
         $testimonials_criteria = new CDbCriteria();
+        $testimonials_criteria->condition = 'active=1';
         $testimonials_criteria->order = 'created desc';
         $testimonials_all = Testimonials::model()->findAll($testimonials_criteria);
         $testimonials = array();

@@ -65,15 +65,19 @@
         )
     ); ?>
     <?php if(!isset($_GET['blank'])):?>
-        <?php $this->widget(
-            'application.extensions.bootstrap.widgets.TbButton',
-            array(
-                'buttonType' => 'reset',
-                'context' => 'warning',
-                'icon'=> 'glyphicon glyphicon-remove',
-                'label' => t('Reset form')
-            )
-        ); ?>
+        <?php
+        if ($this->action->id != 'update') {
+            $this->widget(
+                'application.extensions.bootstrap.widgets.TbButton',
+                array(
+                    'buttonType' => 'reset',
+                    'context' => 'warning',
+                    'icon' => 'glyphicon glyphicon-remove',
+                    'label' => t('Reset form')
+                )
+            );
+        }
+        ?>
 
     <?php endif?>
     <?php $this->endWidget(); ?>

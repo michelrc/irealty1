@@ -51,6 +51,12 @@ $this->breadcrumbs = array(
                 'sortable' => false,
 				'filter'=>GxHtml::listDataEx(PropertyCategory::model()->findAll()),
 				),
+        array(
+            'name'=>'type',
+            'value'=>'GxHtml::valueEx($data->type0)',
+            'sortable' => false,
+            'filter'=>GxHtml::listDataEx(PropertyType::model()->findAll()),
+        ),
 		array(
                         'class' => 'application.extensions.bootstrap.widgets.TbEditableColumn',
                         'name' => 'description',

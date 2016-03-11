@@ -17,155 +17,194 @@
  * @property string $author_name
  * @property string $company_name
  * @property string $created
+ * @property int $active
  *
  * @property Date2TimeBehavior $date2time
  * @property CurrencyBehavior $currency
  * @property ImageARBehavior $imageAR
-
  */
-abstract class BaseTestimonials extends I18NInTableAdapter {
+abstract class BaseTestimonials extends I18NInTableAdapter
+{
 
-/* si tiene una imagen pa subir con ImageARBehavior, descomente la linea siguiente
-// public $recipeImg;
+    /* si tiene una imagen pa subir con ImageARBehavior, descomente la linea siguiente
+    // public $recipeImg;
 
-    /**
-    * Behaviors.
-    * @return array
-    */
+        /**
+        * Behaviors.
+        * @return array
+        */
     public $recipeImg1;
-    function behaviors() {
-        return CMap::mergeArray(parent::behaviors(), array(
-                
 
-                                '_photo' => array(
-                    'class' => 'ImageARBehavior',
-                    'attribute' => 'recipeImg1', // this must exist
-                    'extension' => 'jpg,gif,png', // possible extensions, comma separated
-                    'prefix' => 'img1_',
-                    'relativeWebRootFolder' => '/images/Testimonials',
-                    'formats' => array(
+    function behaviors()
+    {
+        return CMap::mergeArray(parent::behaviors(), array(
+
+
+            '_photo' => array(
+                'class' => 'ImageARBehavior',
+                'attribute' => 'recipeImg1', // this must exist
+                'extension' => 'jpg,gif,png', // possible extensions, comma separated
+                'prefix' => 'img1_',
+                'relativeWebRootFolder' => '/images/Testimonials',
+                'formats' => array(
                     // create a thumbnail for used in the view datails
                     'thumb' => array(
-                    'suffix' => '_thumb',
-                    'process' => array('resize' => array(50, 50)),
+                        'suffix' => '_thumb',
+                        'process' => array('resize' => array(50, 50)),
                     ),
                     'normal' => array(
-                    'suffix' => '_normal',
+                        'suffix' => '_normal',
 
-                                        'process' => array('resize' => array(135,135, 1)),
-                                        ),
-                    // and override the default :
+                        'process' => array('resize' => array(135, 135, 1)),
                     ),
+                    // and override the default :
+                ),
 
-                    'defaultName' => 'default', // when no file is associated, this one is used
-                            // defaultName need to exist in the relativeWebRootFolder path, and prefixed by prefix,
-                            // and with one of the possible extensions. if multiple formats are used, a default file must exist
-                            // for each format. Name is constructed like this :
-                            //     {prefix}{name of the default file}{suffix}{one of the extension}
-                ),
-                
+                'defaultName' => 'default', // when no file is associated, this one is used
+                // defaultName need to exist in the relativeWebRootFolder path, and prefixed by prefix,
+                // and with one of the possible extensions. if multiple formats are used, a default file must exist
+                // for each format. Name is constructed like this :
+                //     {prefix}{name of the default file}{suffix}{one of the extension}
+            ),
 
-                                'files' => array(
-                     'class'=>'application.modules.ycm.behaviors.FileBehavior',
-                ),
-                'date2time' => array(
-                    'class' => 'ycm.behaviors.Date2TimeBehavior',
-                    'attributes'=>'',
-                    'format'=>'Y-m-d',
-                ),
-                'datetime2time' => array(
-                    'class' => 'ycm.behaviors.Date2TimeBehavior',
-                    'attributes'=>'',
-                    'format'=>'Y-m-d H:i:s',
-                ),
-                'currency' => array(
-                    'class' => 'ycm.behaviors.CurrencyBehavior',
-                    'attributes'=>'',
-                ),
-                            ));
+
+            'files' => array(
+                'class' => 'application.modules.ycm.behaviors.FileBehavior',
+            ),
+            'date2time' => array(
+                'class' => 'ycm.behaviors.Date2TimeBehavior',
+                'attributes' => '',
+                'format' => 'Y-m-d',
+            ),
+            'datetime2time' => array(
+                'class' => 'ycm.behaviors.Date2TimeBehavior',
+                'attributes' => '',
+                'format' => 'Y-m-d H:i:s',
+            ),
+            'currency' => array(
+                'class' => 'ycm.behaviors.CurrencyBehavior',
+                'attributes' => '',
+            ),
+        ));
     }
 
 
-	public static function model($className=__CLASS__) {
-		return parent::model($className);
-	}
+    public static function model($className = __CLASS__)
+    {
+        return parent::model($className);
+    }
 
-	public function tableName() {
-		return 'testimonials';
-	}
+    public function tableName()
+    {
+        return 'testimonials';
+    }
 
-	public static function label($n = 1) {
-		return self::model()->t_model('Testimonials|Testimonials', $n);
-	}
+    public static function label($n = 1)
+    {
+        return self::model()->t_model('Testimonials|Testimonials', $n);
+    }
 
-	public static function representingColumn() {
-		return 'text';
-	}
+    public static function representingColumn()
+    {
+        return 'text';
+    }
 
-    public function i18nAttributes() {
+    public function i18nAttributes()
+    {
         return array(
-        'text', );
+            'text',);
     }
 
-	public function rules() {
-		return array(
-			array('id, text, text_en, text_es, author_name', 'required'),
-			array('id', 'length', 'max'=>50),
-			array('photo', 'length', 'max'=>255),
-			array('author_name, company_name', 'length', 'max'=>250),
-			array('photo, company_name', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('text', 'i18n.validators.I18NValidator', 'validate' => 'required'),
+    public function rules()
+    {
+        return array(
+            array('id, text, text_en, text_es, author_name', 'required'),
+            array('id', 'length', 'max' => 50),
+            array('photo', 'length', 'max' => 255),
+            array('author_name, company_name', 'length', 'max' => 250),
+            array('photo, company_name', 'default', 'setOnEmpty' => true, 'value' => null),
+            array('text', 'i18n.validators.I18NValidator', 'validate' => 'required'),
+            array('active', 'numerical'),
 
-/* descomente las lineas siguientes si quiere subir una image con ImageARBehavior*/
-    array('recipeImg1', 'file', 'on'=>'insert', 'allowEmpty'=>true, 'types'=>'jpg,jpeg,gif,png,JPG,GIF,JPEG,PNG', 'maxSize'=>1024*1024*6),
-array('recipeImg1', 'file', 'on'=>'update', 'allowEmpty'=>true, 'types'=>'jpg,jpeg,gif,png,JPG,GIF,JPEG,PNG', 'maxSize'=>1024*1024*6),
-array('recipeImg1', 'safe'),
+            /* descomente las lineas siguientes si quiere subir una image con ImageARBehavior*/
+            array('recipeImg1', 'file', 'on' => 'insert', 'allowEmpty' => true, 'types' => 'jpg,jpeg,gif,png,JPG,GIF,JPEG,PNG', 'maxSize' => 1024 * 1024 * 6),
+            array('recipeImg1', 'file', 'on' => 'update', 'allowEmpty' => true, 'types' => 'jpg,jpeg,gif,png,JPG,GIF,JPEG,PNG', 'maxSize' => 1024 * 1024 * 6),
+            array('recipeImg1', 'safe'),
 
 
-			array('id, photo, text, text_en, text_es, author_name, company_name, created', 'safe', 'on'=>'search'),
-        		);
-	}
+            array('id, photo, text, text_en, text_es, author_name, company_name, created, active', 'safe', 'on' => 'search'),
+        );
+    }
 
-	public function relations() {
-		return array(
-		);
-	}
+    public function relations()
+    {
+        return array();
+    }
 
-	public function pivotModels() {
-		return array(
-		);
-	}
+    public function pivotModels()
+    {
+        return array();
+    }
 
-	public function attributeLabels() {
-		return array(
-			'id' => $this->t_label('ID'),
-			'photo' => $this->t_label('Photo Alt'),
-			'text' => $this->t_label('Text'),
-			'text_en' => $this->t_label('Text En'),
-			'text_es' => $this->t_label('Text Es'),
-			'author_name' => $this->t_label('Author name'),
-			'company_name' => $this->t_label('Company name'),
-			'created' => $this->t_label('Created'),
-    'recipeImg1' => $this->t_label('Photo'),
+    public function attributeLabels()
+    {
+        return array(
+            'id' => $this->t_label('ID'),
+            'photo' => $this->t_label('Photo Alt'),
+            'text' => $this->t_label('Text'),
+            'text_en' => $this->t_label('Text En'),
+            'text_es' => $this->t_label('Text Es'),
+            'author_name' => $this->t_label('Author name'),
+            'company_name' => $this->t_label('Company name'),
+            'created' => $this->t_label('Created'),
+            'recipeImg1' => $this->t_label('Photo'),
+            'active' => $this->t_label('Active'),
+        );
+    }
 
-		);
-	}
+    public function search()
+    {
+        $criteria = new CDbCriteria;
 
-	public function search() {
-		$criteria = new CDbCriteria;
-
-		$criteria->compare('id', $this->id, true);
-		$criteria->compare('photo', $this->photo, true);
-		$criteria->compare('text', $this->text, true);
-		$criteria->compare('text_en', $this->text_en, true);
-		$criteria->compare('text_es', $this->text_es, true);
-		$criteria->compare('author_name', $this->author_name, true);
-		$criteria->compare('company_name', $this->company_name, true);
-		$criteria->compare('created', $this->created, true);
+        $criteria->compare('id', $this->id, true);
+        $criteria->compare('photo', $this->photo, true);
+        $criteria->compare('text', $this->text, true);
+        $criteria->compare('text_en', $this->text_en, true);
+        $criteria->compare('text_es', $this->text_es, true);
+        $criteria->compare('author_name', $this->author_name, true);
+        $criteria->compare('company_name', $this->company_name, true);
+        $criteria->compare('created', $this->created, true);
+        $criteria->compare('active', $this->active, true);
         $criteria->order = 'created desc';
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-            		));
-	}
+        return new CActiveDataProvider($this, array(
+            'criteria' => $criteria,
+        ));
+    }
+
+    public function getStatus($status)
+    {
+        if ($status) {
+            if (Yii::app()->getLanguage() == "en") {
+                return 'Active';
+            } else {
+                return 'Activo';
+            }
+        } else {
+            if (Yii::app()->getLanguage() == "en") {
+                return 'No Active';
+            } else {
+                return 'No Activo';
+            }
+        }
+    }
+
+    public function statusFilter(){
+        if(Yii::app()->getLanguage() == "en"){
+            return array(1 => "Active", 0 => "No Active");
+        }
+        if(Yii::app()->getLanguage() == "es"){
+            return array(1 => "Activo", 0 => "No Activo");
+        }
+    }
 }
