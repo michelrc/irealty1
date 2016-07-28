@@ -245,7 +245,7 @@ return array(
 
         'user' => array(
             'class' => 'auth.components.AuthWebUser',
-            'admins' => array('admin'), // users with full access
+//            'admins' => array('admin'), // users with full access
             'allowAutoLogin'=>true,
             'loginUrl' => array('/user/login'),
         ),
