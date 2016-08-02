@@ -55,4 +55,13 @@ class FrontendModule extends CWebModule
         $mail->send();
 
     }
+    static function getCurrency()
+    {
+        $currency_data = array();
+        $currency = Currency::model()->find('active=:active', array(':active' => 1));
+        $currency_data['symbol'] = $currency->symbol;
+        $currency_data['alphabetical_code'] = $currency->alphabetical_code;
+
+        return $currency_data;
+    }
 }

@@ -13,6 +13,7 @@ return array(
     ),
     'currency.defaults' => array(
         'symbol'=> '$',
+        'acronym' => 'RD',
         'showSymbol'=> false,
         'symbolStay'=> false,
         'thousands'=> ',',
@@ -24,6 +25,7 @@ return array(
     ),
 
     'timezones'=> require(dirname(__FILE__) . DS .'timezones.php'),
+    'language'=> 'es',
 
 
     'ycm.list.defaultGrid' => 'application.extensions.bootstrap.widgets.TbGridView',

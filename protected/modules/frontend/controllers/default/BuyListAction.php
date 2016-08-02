@@ -13,6 +13,7 @@ class BuyListAction extends CAction
         $controller = $this->getController();
 
         $page_banner = BuyListPageTopImage::model()->findAll();
+        $currency = FrontendModule::getCurrency();
 
         $rand_number = rand(0, sizeof($page_banner) - 1);
 
@@ -160,15 +161,24 @@ class BuyListAction extends CAction
             }
 
         }
-//        ddump($criteria);
+        $current_page = 1;
+        if (isset($_GET['page'])) {
+            $current_page = $_GET['page'];
+        }
 
         $count_properties = count(Property::model()->findAll($criteria));
-        $pages = new CPagination($count_properties);
-        $pages->pageSize = $page_general_info->amount_products_per_page;
-        $pages->applyLimit($criteria);
+        /*$pages = new CPagination($count_properties);
+        $pages->pageSize = $page_general_info->amount_products_per_page;*/
+//        $pages->applyLimit($criteria);
+//        ddump($pages->currentPage);
+          $criteria->limit = ($current_page) * $page_general_info->amount_products_per_page;
 
         $properties_query = Property::model()->findAll($criteria);
 
+         $show_more_properties = false;
+        if (count($properties_query) < $count_properties) {
+            $show_more_properties = true;
+        }
         $properties = $controller->get_array_properties($properties_query);
         $locations = Province::model()->findAll();
 
@@ -194,6 +204,7 @@ class BuyListAction extends CAction
         $leading_properties = $controller->get_most_popular_properties('buy');
         //---- find obteniendo las propiedades lideres--------
 
+        $params = array_merge($controller->actionParams, array('page' => $current_page + 1));
         return $controller->render('property_list',
             array(
                     'category' => 'buy',
@@ -217,7 +228,9 @@ class BuyListAction extends CAction
                     'property_types' => $property_types,
 
                     'properties' => $properties,//array_chunk($properties,3),
-                    'pages' => $pages,
+//                    'pages' => $pages,
+                    'next_url' => $controller->createUrl('', $params),
+                    'show_more_properties' => $show_more_properties,
 
                 //------options selected--------------------------------------
                     'price_range_selected' => $price_range_id,
@@ -228,6 +241,7 @@ class BuyListAction extends CAction
 
                     'most_popular_properties' => $leading_properties,
                     'conditions' => $conditions,
+                    'currency' => $currency
 
 
             )

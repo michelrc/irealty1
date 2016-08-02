@@ -11,6 +11,7 @@ class PropertyAction extends CAction
     public function run()
     {
         $controller = $this->getController();
+        $currency = FrontendModule::getCurrency();
 
         if($_GET['id'])
         {
@@ -50,17 +51,18 @@ class PropertyAction extends CAction
                 $type = PropertyType::model()->findByPk($property->type);
                 $type_name = $type->type;
                 $amenities = $property->propertyAmenities;
-                $amenities_data = array();
-                foreach($amenities as $amenitie){
-                    $amenities_data[] = array('id' => $amenitie->id, 'title' => $amenitie->amenitie->title, 'relevant' => $amenitie->relevant);
+                $amenities_data = array(1 => array(), 2 => array(), 3 => array());
+                $count = 1;
+                foreach($amenities as $key => $amenitie){
+//                    if($count == 1)
+                    $amenities_data[$count][] = array('id' => $amenitie->id, 'title' => $amenitie->amenitie->title, 'relevant' => $amenitie->relevant);
+
+                    if($count == 3)
+                        $count = 0;
+                    $count +=1;
                 }
 
-                $chunk = sizeof($amenities_data)/2;
-                if(sizeof($amenities) % 2 != 0)
-                    $chunk += 1;
-                if(sizeof($amenities) > 0)
-                    $amenities_data = array_chunk($amenities_data, $chunk);
-
+                
                 $property_name = $property->name;
                 $address = $property->address;
                 $province = $property->	province0->name;
@@ -171,6 +173,7 @@ class PropertyAction extends CAction
                 'popular_property_background' => $popular_property_background,
                 'most_popular_properties' => $leading_properties,
                 'newsletter_placeholder' =>$newsletter_placeholder,
+                 'currency' => $currency
 
 
             )

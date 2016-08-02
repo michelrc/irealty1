@@ -25,7 +25,7 @@ class AddSubscribersAction extends CAction
                     $response = array('success' => 1, 'message' => Yii::t('message', 'You have successfully subscribed.'));
                 }
                 if (Yii::app()->getLanguage() == 'es') {
-                    $response = array('success' => 1, 'message' => Yii::t('message', 'Subcripci&oacute;n &eaciute;xitosa.'));
+                    $response = array('success' => 1, 'message' => Yii::t('message', 'Subcripción éxitosa.'));
                 }
             } else {
                 if (Yii::app()->getLanguage() == 'en') {

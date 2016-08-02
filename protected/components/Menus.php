@@ -80,24 +80,48 @@ class Menus {
                 'icon' => 'briefcase',
                 'label' => t('Administration'),
 //                'visible' => UserModule::user()->id,
-                'visible' => user()->isAdmin,
+                'visible' => user()->checkAccess('User Management'),
                 'items' => array(
-                    /*array(
+                    array(
                         'icon' => 'flag',
-                        'label' => t('Enterprise'),
-                        'url' => array('/entity/systemCompany/admin'),
-                        'active' => Yii::app()->controller->module->id === 'entity' && Yii::app()->controller->id === 'systemcompany',
-                    ),*/
+                        'label' => t('Language'),
+                        'url' => array('/i18n/language/admin'),
+                        'visible' => user()->isAdmin,
+                        'active' => Yii::app()->controller->module->id === 'entity',
+                    ),
+                    array(
+                        'icon' => 'flag',
+                        'label' => t('Currency'),
+                        'url' => array('/theme/currency/admin'),
+                        'visible' => user()->isAdmin,
+                        'active' => Yii::app()->controller->module->id === 'entity',
+                    ),
                     array(
                         'icon' => 'flag',
                         'label' => t('General tracking code'),
                         'url' => array('/theme/generalTrackingCodes/admin'),
+                        'visible' => user()->isAdmin,
                         'active' => Yii::app()->controller->module->id === 'theme' && Yii::app()->controller->id === 'generalTrackingCodes',
                     ),
                     array(
                         'icon' => 'user',
                         'label' => t('Users'),
                         'url' => array('/user/admin/admin'),
+                        'visible' => user()->checkAccess('User Management'),
+                        'active' => Yii::app()->controller->module->id === 'user' && Yii::app()->controller->id === 'admin',
+                    ),
+                    array(
+                        'icon' => 'flag',
+                        'label' => t('Operations'),
+                        'url' => array('/auth/operation'),
+                        'visible' => user()->isAdmin,
+                        'active' => Yii::app()->controller->module->id === 'user' && Yii::app()->controller->id === 'admin',
+                    ),
+                    array(
+                        'icon' => 'flag',
+                        'label' => t('Assignment'),
+                        'url' => array('/auth/assignment/index'),
+                        'visible' => user()->isAdmin,
                         'active' => Yii::app()->controller->module->id === 'user' && Yii::app()->controller->id === 'admin',
                     ),
                     /*array(
@@ -119,6 +143,7 @@ class Menus {
                 'url' => '#',
                 'icon' => 'user',
                 'label' => user()->isGuest?t('User'):UserModule::user()->getFullName(),
+                'visible' => !user()->isGuest,
                 'items' => array(
                     array(
                         'icon' => 'user',

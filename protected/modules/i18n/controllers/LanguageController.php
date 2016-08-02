@@ -84,6 +84,33 @@ class LanguageController extends GxController
             );
 
             if ($model->saveWithRelated($relatedData)) {
+                $criteria = new CDbCriteria();
+                $criteria->condition = 'isDefault = :isDefault';
+                $criteria->params = array(':isDefault' => 1);
+                $criteria2 = new CDbCriteria();
+                $criteria2->condition = 'enable = :enable';
+                $criteria2->params = array(':enable' => 1);
+
+                $enable_languages = Language::model()->find($criteria2);
+                $language = Language::model()->find($criteria);
+
+                if (count($enable_languages) == 0) {
+                    unset($_SESSION['language']);
+                    $_SESSION['language'] = Yii::app()->params['language'];
+                }
+                if ($language) {
+                    unset($_SESSION['language']);
+                    if ($language->name == 'Español') {
+                        $_SESSION['language'] = 'es';
+                        var_dump($_SESSION['language']);
+                    }
+                    if ($language->name == 'English') {
+                        $_SESSION['language'] = 'en';
+                        var_dump($_SESSION['language']);
+                    }
+                } else {
+                    $_SESSION['language'] = 'es';
+                }
                 Yii::app()->user->setFlash('success', t('Success, the changes were saved.'));
                 $this->redirect(array('admin'));
             } else {
@@ -128,8 +155,37 @@ class LanguageController extends GxController
         if (app()->request->isAjaxRequest && app()->request->isPostRequest) {
             Yii::import("bootstrap.widgets.TbEditableSaver");
             $editableSaver = new TbEditableSaver($model);
-            ddump($model);
+            
             $editableSaver->update();
+            $criteria = new CDbCriteria();
+            $criteria->condition = 'isDefault = :isDefault';
+            $criteria->params = array(':isDefault' => 1);
+
+            $criteria2 = new CDbCriteria();
+            $criteria2->condition = 'enable = :enable';
+            $criteria2->params = array(':enable' => 1);
+
+            $enable_languages = Language::model()->count($criteria2);
+            $language = Language::model()->find($criteria);
+
+            if ($enable_languages == 0) {
+                unset($_SESSION['language']);
+                $_SESSION['language'] = Yii::app()->params['language'];
+            }
+
+            if ($language) {
+                unset($_SESSION['language']);
+                if ($language->name == 'Español') {
+                    $_SESSION['language'] = 'es';
+                    var_dump($_SESSION['language']);
+                }
+                if ($language->name == 'English') {
+                    $_SESSION['language'] = 'en';
+                    var_dump($_SESSION['language']);
+                }
+            } else {
+                $_SESSION['language'] = 'es';
+            }
             app()->end();
         }
     }

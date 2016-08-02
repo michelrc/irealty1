@@ -14,7 +14,7 @@ class SeoPageWidget extends CWidget
             }
         }
         /** @var SeoModel $seo */
-        if($pathInfo == '')
+        if($pathInfo == $lang || $pathInfo == '')
             $pathInfo = '/';
         $seo = SeoModel::model()->findByAttributes(array(I18NInTableAdapter::_attr('url', $lang) => $pathInfo));
 

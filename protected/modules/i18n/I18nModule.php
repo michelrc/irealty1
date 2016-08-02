@@ -50,7 +50,7 @@ class I18nModule extends CWebModule
                 'url' => '#',
                 'icon' => 'globe',
                 'label' => 'Traducciones',
-                'visible' => true,
+                'visible' =>user()->isAdmin,
                 'items' => array(
 //                    array(
 //                        'icon' => 'info-sign',
@@ -62,6 +62,7 @@ class I18nModule extends CWebModule
                         'icon' => 'globe',
                         'label' => Yii::t('sideMenu', 'Traducciones'),
                         'url' => array('/i18n/source/admin'),
+                         'visible' => user()->isAdmin,
                         'active' => Yii::app()->controller->module->id === 'i18n' && Yii::app()->controller->id === 'source',
                     ),
 //                    array(

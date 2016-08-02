@@ -18,6 +18,7 @@ class IndexAction extends CAction
         $home_recent_properties = HomePageRecentsProperties::model()->find();
         $home_why_shop = HomePageWhyShop::model()->find();
         $home_why_shop_icons = HomePageWhyShopIcons::model()->findAll();
+        $currency = FrontendModule::getCurrency();
 
 
         //---- obteniendo las propiedades lideres--------
@@ -106,7 +107,7 @@ class IndexAction extends CAction
         }
 
         $testimonials_criteria = new CDbCriteria();
-        $testimonials_criteria->condition = 'active=1';
+        
         $testimonials_criteria->order = 'created desc';
         $testimonials_all = Testimonials::model()->findAll($testimonials_criteria);
         $testimonials = array();
@@ -217,6 +218,7 @@ class IndexAction extends CAction
                 'contact_us_image' => $home_contact_us_image,
 
                 'blogs' => $blogs,
+                'currency' => $currency
 
 
 

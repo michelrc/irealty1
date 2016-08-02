@@ -57,9 +57,7 @@ class ContactUsAction extends CAction
             $contact_us_reason[] = array('id' => $reason->id, 'title' => $reason->title, 'selected' => $selected);
         }
         $agents_criteria = new CDbCriteria();
-        $agents_criteria->condition = 'best_agent = 1';
-        $agents_criteria->addCondition('active =1', 'AND');
-        $agents_criteria->limit = 2;
+        $agents_criteria->limit = 3;
         $agents_query = Agent::model()->findAll($agents_criteria);
 
         $agents_all  =array();

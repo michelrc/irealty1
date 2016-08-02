@@ -88,11 +88,13 @@ if ($action_id == 'property' and $this->is_rent == false) {
             <?php endif?>
         </ul>
         <div class="page-language pull-right">
-            <?php if($_SESSION['language'] == 'es'):?>
-                <a href="/changelang/en">English</a>
-            <?php else:?>
-                <a href="/changelang/es">Español</a>
-            <?php endif?>
+            <?php if ($this->common_data['language'] > 1): ?>
+                    <?php if ($_SESSION['language'] == 'es'): ?>
+                        <a href="/changelang/en" class="pull-right">English</a>
+                    <?php else: ?>
+                        <a href="/changelang/es" class="pull-right">Spanish</a>
+                    <?php endif ?>
+                <?php endif ?>
 
         </div>
         <div class="pull-right hidden-xs"><a href="mailto:<?php if(isset($this->common_data['email'])):echo $this->common_data['email'];else:?>sales@puntacanahome.com<?php endif?>" class="contact-email">

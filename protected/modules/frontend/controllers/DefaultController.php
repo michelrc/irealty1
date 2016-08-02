@@ -77,10 +77,10 @@ class DefaultController extends Controller
 
         }
 
-        $general_tracking = GeneralTrackingCodes::model()->find();
-        if(isset($general_tracking))
+        $newsletter = NewsletterSection::model()->find();
+        if(isset($newsletter))
         {
-            $general_tracking_code = $general_tracking->source_code;
+            $newsletter_placeholder = $newsletter->place_holder;
         }
 
         return array(
@@ -117,7 +117,7 @@ class DefaultController extends Controller
             'searcher_rent' => $searcher_rent,
             'searcher_placeholder' => $searcher_placeholder,
 
-            'general_tracking' => $general_tracking_code
+            'newsletter_placeholder' => $newsletter_placeholder,
 
         );
     }
@@ -295,6 +295,7 @@ class DefaultController extends Controller
             'blog_list' => $actions_path.'.BlogListAction',
 //            'aboutus' => $actions_path.'.AboutUsAction',
             'contact_us' => $actions_path.'.ContactUsAction',
+            'thanks' => $actions_path.'.ThanksAction',
             'about_us' => $actions_path.'.AboutUsAction',
             'terms_conditions' => $actions_path.'.TermsConditionsAction',
             'changelang' => 'application.modules.seo.components.LanguageSwitcherAction',
@@ -366,23 +367,28 @@ class DefaultController extends Controller
                 $message = $_POST['message'];
                 $phone = $_POST['phone'];
                 $reason = $_POST['reason'];
+                $property = $_POST['property'];
+                $reason = $_POST['reason'];
                 $message = $message.'<br> '.'Nombre: '. $name.
                             '<br> '. 'Teléfono: '. $phone;
 
                 $criteria = new CDbCriteria();
                 $criteria->compare('id', $reason);
                 $reason_query = ContactUsReason::model()->find($criteria);
-                $message .= '<br> Motivo del contacto: '.$reason_query->title;
+                $message .= '<br> Motivo del contacto: '.$reason;
+                if($property)
+                $message .= ' - '.$property;
 
                 $this->sendMail($name, $email, $to_email, $subject, $message);
                 $url = $this->createUrl('/frontend/default/contact_us');
-                return $this->redirect($url."#section_title");
+//                return $this->redirect($url."#section_title");
             }
             else
             {
                 $url = $this->createUrl('/frontend/default/contact_us');
-                return $this->redirect($url.'#section_title');
+//                return $this->redirect($url.'#section_title');
             }
+            return $this->redirect($this->createUrl('/frontend/default/thanks'));
             $this->layout = 'main';
         }
         elseif(Yii::app()->request->isAjaxRequest)
@@ -432,10 +438,10 @@ class DefaultController extends Controller
 //            $mail->send();
         if ($mail->send()) {
 
-            Yii::app()->user->setFlash('success',t('Thanks you for contact us. We answer you as soon as possible.'));
+ //           Yii::app()->user->setFlash('success',t('Thanks you for contact us. We answer you as soon as possible.'));
             return true;
         } else {
-            Yii::app()->user->setFlash('error',t('Error sending email: ').$mail->getError());
+//            Yii::app()->user->setFlash('error',t('Error sending email: ').$mail->getError());
             return false;
         }
 
@@ -472,6 +478,7 @@ class DefaultController extends Controller
         {
             $criteria->addCondition('category = "'. $category->id.'"', 'AND');
         }
+        $criteria->group = '`t`.`id`';
 
         $properties = Property::model()->findAll($criteria);
 

@@ -11,6 +11,7 @@ class HomeFilterPropertyAction extends CAction
     public function run()
     {
         $controller = $this->getController();
+        $currency = FrontendModule::getCurrency();
 
         $type_id = $_POST['type'];
         $category = $_POST['category'];
@@ -86,7 +87,7 @@ class HomeFilterPropertyAction extends CAction
             array(
                 'recent_properties' => $recent_properties,
                 'count_recent_properties' =>sizeof($recent_properties_all),
-
+                 'currency' => $currency
             )
         );
 

@@ -143,9 +143,10 @@ abstract class BaseSeoModel extends I18NInTableAdapter
     {
         return array(
             array('url, title', 'i18n.validators.I18NValidator', 'validate' => 'required'),
-            array('url, title, modelClassName', 'required'),
-            array('url', 'i18n.validators.I18NValidator', 'validate' => 'unique'),
+//            array('url, title, modelClassName', 'required'),
             array('url', 'cleanUpUrl'),
+            array('url', 'i18n.validators.I18NValidator', 'validate' => 'unique'),
+            
             array('url, title, keywords, modelClassName', 'length', 'max' => 255),
             array('description', 'safe'),
             array('url, title, description, keywords', 'default', 'setOnEmpty' => true, 'value' => null),
@@ -182,10 +183,14 @@ abstract class BaseSeoModel extends I18NInTableAdapter
         $criteria = new CDbCriteria;
 
         $criteria->compare('id', $this->id);
-        $criteria->compare('url', $this->url, true);
-        $criteria->compare('title', $this->title, true);
-        $criteria->compare('description', $this->description, true);
-        $criteria->compare('keywords', $this->keywords, true);
+        $criteria->compare('url_es', $this->url, true);
+        $criteria->compare('url_en', $this->url, true);
+        $criteria->compare('title_es', $this->title, true);
+        $criteria->compare('title_en', $this->title, true);
+        $criteria->compare('description_es', $this->description, true);
+        $criteria->compare('description_en', $this->description, true);
+        $criteria->compare('keywords_es', $this->keywords, true);
+        $criteria->compare('keywords_en', $this->keywords, true);
         $criteria->compare('modelClassName', $this->modelClassName, true);
 
         return new CActiveDataProvider($this, array(

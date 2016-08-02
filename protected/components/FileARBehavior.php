@@ -209,8 +209,8 @@ class FileARBehavior extends CActiveRecordBehavior {
 	/**
 	 * Save an uploaded file if given, after removing possible other files.
 	 */
-	public function afterSave($evt)
-    {
+	public function afterSave($evt){
+		
 		$file = CUploadedFile::getInstance($this->owner, $this->attribute);
 		if ($file && strpos($this->extension, $file->extensionName) !== FALSE) {
 			$path = $this->getFolderPath();

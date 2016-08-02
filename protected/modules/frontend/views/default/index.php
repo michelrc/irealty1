@@ -87,7 +87,7 @@
                         <div class="detail-info">
                             <a href="" role="button" class="pull-right detail-trigger">
                                 <i class="fa fa-tag fa-inverse"></i></a><span
-                                class="price">USD<strong>$<?php echo $property['price'] ?></strong></span>
+                                class="price"><?php echo $currency['alphabetical_code']?><strong><?php echo $currency['symbol']?><?php echo $property['price'] ?></strong></span>
 
                             <div class="details">
                                 <ul class="list-unstyled">
@@ -194,7 +194,7 @@
 
                             <div class="detail-info"><a href="" role="button" class="pull-right detail-trigger"><i
                                         class="fa fa-tag fa-inverse"></i></a><span
-                                    class="price">USD<strong>$<?php echo $property['price'] ?></strong></span>
+                                    class="price"><?php echo $currency['alphabetical_code']?><strong><?php echo $currency['symbol']?><?php echo $property['price'] ?></strong></span>
 
                                 <div class="details">
                                     <ul class="list-unstyled">

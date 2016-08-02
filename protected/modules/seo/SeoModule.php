@@ -58,18 +58,19 @@ class SeoModule extends CWebModule
                 'url' => '#',
                 'icon' => 'tags',
                 'label' => Yii::t('sideMenu', 'Seo'),
-                'visible' => true,
+                'visible' => user()->isAdmin,
                 'items' => array(
-                    /*array(
-                        'icon' => 'star',
-                        'label' => Yii::t('sideMenu', 'Seo Model'),
-                        'url' => array('/seo/model/admin'),
-                        'active' => Yii::app()->controller->module->id == 'seo' && Yii::app()->controller->id == 'model',
-                    ),*/
+//                    array(
+//                        'icon' => 'star',
+//                        'label' => Yii::t('sideMenu', 'Seo Model'),
+//                        'url' => array('/seo/model/admin'),
+//                        'active' => Yii::app()->controller->module->id == 'seo' && Yii::app()->controller->id == 'model',
+//                    ),
                     array(
                         'icon' => 'link',
                         'label' => Yii::t('sideMenu', 'Url Rules'),
                         'url' => array('/seo/url/admin'),
+                        'visible' => user()->isAdmin,
                         'active' => Yii::app()->controller->module->id == 'seo' && Yii::app()->controller->id == 'url',
                     ),
                 ),

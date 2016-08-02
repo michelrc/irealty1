@@ -30,7 +30,7 @@ return array(
     ),
     'Mailer' => 'smtp',
     'Host' => 'localhost',
-    'Port' => 1025,
+    'Port' => 25,
 //    'SMTPSecure' => 'ssl',
 //    'SMTPAuth' => true,
 //    'Username' => 'your_email@gmail.com',
